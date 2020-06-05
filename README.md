@@ -1,6 +1,6 @@
 #  Odontosistem
 
-Este es un proyecto en el que vamos a crear un sistema completo de roles y permisos en laravel 7. 
+Este es un proyecto en laravel 7. 
 
 Para poder utilizar este proyecto, debes tener los siguientes requisitos:
 
@@ -17,7 +17,7 @@ Pasos para instalar este proyecto correctamente:
 
 1) descarga este proyecto o clónalo con el comando: 
 
-git clone git://github.com/schacon/grit.git
+git clone y la url####
 
 2) ejecutar el comando: 
 
