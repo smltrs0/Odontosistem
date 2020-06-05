@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Pacientes;
 use App\User;
 use Illuminate\Http\Request;
@@ -12,11 +11,7 @@ class PacientesController extends Controller
     {
         $this->middleware('auth');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
@@ -25,11 +20,6 @@ class PacientesController extends Controller
         return view('pacientes.index', compact('pacientes'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         // Instanciamos y pasamos un paciente para que no de error al reutilizar el formulario
@@ -38,12 +28,6 @@ class PacientesController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         // $request->validate([
@@ -59,15 +43,9 @@ class PacientesController extends Controller
         Pacientes::create($request->all());
 
         return redirect()->route('pacientes.create')
-                        ->with('success', 'Patient created successfully.');
+                        ->with('success', 'Paciente creado correctamente.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Pacientes  $pacient
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //solicitamos los datos de este paciente
@@ -81,12 +59,6 @@ class PacientesController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\User  $pacient
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Pacientes $paciente)
     {
         return view('pacientes.editar', compact('paciente'));
@@ -105,7 +77,6 @@ class PacientesController extends Controller
             'phone' => 'required',
             'address' => 'required',
         ]);
-
         
         if ($paciente->id == auth()->user()->id) {
             $id_profile = array('user_id'=>auth()->user()->id);
@@ -135,23 +106,15 @@ class PacientesController extends Controller
             $id_profile,
             // Aquí se puede continuar si se le agregan mas campos al formulario
             ]);
-        
         return redirect()->route('pacientes.index')
                         ->with('success', 'Datos actualizados correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\User  $pacient
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Pacientes $paciente)
     {
-        //
         $paciente->delete();
-
         return redirect()->route('pacientes.index')
-                        ->with('success', 'patient deleted successfully');
+                        ->with('success', 'Paciente eliminado correctamente');
     }
 }
