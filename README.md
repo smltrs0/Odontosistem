@@ -1,6 +1,4 @@
-# Jhonatan-Permisos
-
-Bienvenidos al proyecto "Jhonatan-Permisos". 
+#  Odontosistem
 
 Este es un proyecto en el que vamos a crear un sistema completo de roles y permisos en laravel 7. 
 
@@ -47,5 +45,3 @@ DB_PASSWORD=
 7) ejecuta npm install && npm run dev
 
 8) ejecuta php artisan serve y prueba el proyecto que debe funcionar.
-
-Un saludo y Dios les bendiga a todos. 
