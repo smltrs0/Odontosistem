@@ -7,18 +7,17 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
 
 
-    {{-- <script src="{{ asset('public/js/app.js') }}" defer></script> --}}
-
+    <script src="{{ asset('public/js/app.js') }}" defer></script>
     <!-- Styles -->
 
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+        @yield('odontograma')
 </head>
 
-<body>
+<body id="app">
     <div>
         <!--Menu fixed top-->
         <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -39,4 +38,7 @@
     </div>
 </body>
 <script type="text/javascript" src="{{ asset('./assets/scripts/main.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/scripts/odontograma/odontogram.js') }}"></script>
+
+
 </html>

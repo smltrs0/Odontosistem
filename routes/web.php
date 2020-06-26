@@ -39,5 +39,10 @@ Route::resource('pacientes', 'PacientesController');
 
 Route::resource('/role', 'RoleController')->names('role');
 
-Route::resource('/user', 'UserController', ['except'=>[
-    'create','store']])->names('user');
+Route::resource('/user', 'UserController', ['except' => [
+    'create', 'store'
+]])->names('user');
+
+Route::get('finanzas', function () {
+    return view('finanzas.finanzas');
+})->name('finanzas');

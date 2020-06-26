@@ -22,7 +22,6 @@ class PacientesController extends Controller
 
     public function create()
     {
-        // Instanciamos y pasamos un paciente para que no de error al reutilizar el formulario
         return view('pacientes.agregar', [
             'paciente' => new Pacientes
         ]);
@@ -46,17 +45,14 @@ class PacientesController extends Controller
                         ->with('success', 'Paciente creado correctamente.');
     }
 
-    public function show($id)
+    public function show(Pacientes $paciente)
     {
+        dd($paciente);
         //solicitamos los datos de este paciente
-        $paciente = Pacientes::findOrFail($id);
         //return dd($paciente->user); // Paciente contiene los datos del usuario al cual pertenece
-    
-        if ($paciente) {
-            echo json_encode($paciente);
-        } else {
-            return 'no ningún usuario asignado';
-        }
+        
+        echo json_encode($paciente);
+        
     }
 
     public function edit(Pacientes $paciente)

@@ -1,5 +1,5 @@
 <!--Menu lateral izquierdo-->
-<div class="app-sidebar sidebar-shadow">
+<div class="app-sidebar sidebar-shadow" id="main-menu">
     <div class="app-header__logo">
         <div class="logo-src"></div>
         <div class="header__pane ml-auto">
@@ -134,7 +134,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
+                <a href="{{route('finanzas')}}">
                         <i class="metismenu-icon pe-7s-cash"></i>
                         Control financiero
                     </a>

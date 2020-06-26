@@ -1,0 +1,234 @@
+[
+  {
+    "key": 49,
+    "title": "Movilidad grado I",
+    "className": "pro_mobility_i",
+    "type": "Pendiente",
+    "apply": "tooth",
+    "clearBefore": false
+  },
+  {
+    "key": 50,
+    "title": "Movilidad grado II",
+    "className": "pro_mobility_ii",
+    "type": "Pendiente",
+    "apply": "tooth",
+    "clearBefore": false
+  },
+  {
+    "key": 51,
+    "title": "Movilidad grado III",
+    "className": "pro_mobility_iii",
+    "type": "Pendiente",
+    "apply": "tooth",
+    "clearBefore": false
+  },
+  {
+    "key": 97,
+    "title": "Angulo distal o mesial pendiente",
+    "className": "pro_angle",
+    "type": "Pendiente",
+    "apply": "side",
+    "clearBefore": true
+  },
+  {
+    "key": 65,
+    "title": "Angulo distal o mesial en buen estado",
+    "className": "pro_angle_done",
+    "type": "Completado",
+    "apply": "side",
+    "clearBefore": true
+  },
+  {
+    "key": 98,
+    "title": "Sellante en mal estado",
+    "className": "pro_sealing",
+    "type": "Pendiente",
+    "apply": "side",
+    "clearBefore": true
+  },
+  {
+    "key": 66,
+    "title": "Sellante Bueno",
+    "className": "pro_sealing_done",
+    "type": "Completado",
+    "apply": "side",
+    "clearBefore": true
+  },
+  {
+    "key": 99,
+    "title": "Superficie Cariada",
+    "className": "pro_caries",
+    "type": "Pendiente",
+    "apply": "side",
+    "clearBefore": true
+  },
+  {
+    "key": 67,
+    "title": "Tratamiento realizado",
+    "className": "pro_caries_done",
+    "type": "Completado",
+    "apply": "side",
+    "clearBefore": true
+  },
+  {
+    "key": 100,
+    "title": "Endodoncia por realizar",
+    "className": "pro_endodontics",
+    "type": "Pendiente",
+    "apply": "tooth",
+    "clearBefore": true
+  },
+  {
+    "key": 68,
+    "title": "Endodoncia Realizada",
+    "className": "pro_endodontics_done",
+    "type": "Completado",
+    "apply": "tooth",
+    "clearBefore": true
+  },
+  {
+    "key": 101,
+    "title": "Exodoncia",
+    "className": "pro_exodontics",
+    "type": "Pendiente",
+    "apply": "tooth",
+    "clearBefore": true
+  },
+  {
+    "key": 69,
+    "title": "Exodoncia realizada",
+    "className": "pro_exodontics_done",
+    "type": "Completado",
+    "apply": "tooth",
+    "clearBefore": true
+  },
+  {
+    "key": 102,
+    "title": "Línea de fractura",
+    "className": "pro_fracture",
+    "type": "Pendiente",
+    "apply": "side",
+    "clearBefore": true
+  },
+  {
+    "key": 77,
+    "title": "Diente sin erupcionar",
+    "className": "pro_unbroken",
+    "type": "Completado",
+    "apply": "tooth",
+    "clearBefore": true
+  },
+  {
+    "key": 111,
+    "title": "Corona",
+    "className": "pro_crown",
+    "type": "Pendiente",
+    "apply": "tooth",
+    "clearBefore": false
+  },
+  {
+    "key": 79,
+    "title": "Corona Buena",
+    "className": "pro_crown_done",
+    "type": "Completado",
+    "apply": "tooth",
+    "clearBefore": false
+  },
+  {
+    "key": 112,
+    "title": "Pulido pendiente",
+    "className": "pro_polish",
+    "type": "Pendiente",
+    "apply": "tooth",
+    "clearBefore": true
+  },
+  {
+    "key": 80,
+    "title": "Pulido realizado",
+    "className": "pro_polish_done",
+    "type": "Completado",
+    "apply": "tooth",
+    "clearBefore": true
+  },
+  {
+    "key": 113,
+    "title": "Exodoncia quirúrgica",
+    "className": "pro_exodontics_surgical",
+    "type": "Pendiente",
+    "apply": "tooth",
+    "clearBefore": true
+  },
+  {
+    "key": 114,
+    "title": "Resina preventiva en mal estado",
+    "className": "pro_resin",
+    "type": "Pendiente",
+    "apply": "tooth",
+    "clearBefore": false
+  },
+  {
+    "key": 82,
+    "title": "Resina preventiva buena",
+    "className": "pro_resin_done",
+    "type": "Completado",
+    "apply": "tooth",
+    "clearBefore": false
+  },
+  {
+    "key": 115,
+    "title": "Sellante en mal estado",
+    "className": "pro_filling",
+    "type": "Pendiente",
+    "apply": "tooth",
+    "clearBefore": false
+  },
+  {
+    "key": 83,
+    "title": "Sellante Bueno",
+    "className": "pro_filling_done",
+    "type": "Completado",
+    "apply": "tooth",
+    "clearBefore": false
+  },
+  {
+    "key": 118,
+    "title": "Restauración cervical en mal estado",
+    "className": "pro_restoration",
+    "type": "Pendiente",
+    "apply": "side",
+    "clearBefore": true
+  },
+  {
+    "key": 86,
+    "title": "Restauración cervical buena",
+    "className": "pro_restoration_done",
+    "type": "Completado",
+    "apply": "side",
+    "clearBefore": true
+  },
+  {
+    "key": 120,
+    "title": "Radiografía pendiente",
+    "className": "pro_rx",
+    "type": "Pendiente",
+    "apply": "tooth",
+    "clearBefore": true
+  },
+  {
+    "key": 88,
+    "title": "Radiografía realizada",
+    "className": "pro_rx_done",
+    "type": "Completado",
+    "apply": "tooth",
+    "clearBefore": true
+  },
+  {
+    "key": 90,
+    "title": "Diente extraído",
+    "className": "pro_missing",
+    "type": "Pendiente",
+    "apply": "tooth",
+    "clearBefore": true
+  }
+]

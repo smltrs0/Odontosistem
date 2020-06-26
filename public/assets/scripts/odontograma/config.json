@@ -1,0 +1,7 @@
+{
+	"event_id" : 11492,
+	"name" : "Samuel",
+	"showsPrimary" : true, 
+	"comments" : "testeando comentario desde un json", 
+	"procedures" : []
+}

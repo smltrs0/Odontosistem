@@ -67,7 +67,9 @@
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>
                                 @endauth
+
                                 <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+
                                     <ul class="navbar-nav ml-auto">
                                         <!-- Authentication Links -->
                                         @auth()
