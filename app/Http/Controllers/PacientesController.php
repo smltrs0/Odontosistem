@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Pacientes;
 use App\User;
 use Illuminate\Http\Request;
@@ -42,17 +43,14 @@ class PacientesController extends Controller
         Pacientes::create($request->all());
 
         return redirect()->route('pacientes.create')
-                        ->with('success', 'Paciente creado correctamente.');
+            ->with('success', 'Paciente creado correctamente.');
     }
 
     public function show(Pacientes $paciente)
     {
-        dd($paciente);
+
         //solicitamos los datos de este paciente
-        //return dd($paciente->user); // Paciente contiene los datos del usuario al cual pertenece
-        
-        echo json_encode($paciente);
-        
+        return view('pacientes.ver', compact('paciente'));
     }
 
     public function edit(Pacientes $paciente)
@@ -73,20 +71,20 @@ class PacientesController extends Controller
             'phone' => 'required',
             'address' => 'required',
         ]);
-        
+
         if ($paciente->id == auth()->user()->id) {
-            $id_profile = array('user_id'=>auth()->user()->id);
-        // Estas editando tu perfil
+            $id_profile = array('user_id' => auth()->user()->id);
+            // Estas editando tu perfil
         } else {
-            $id_profile= '';
+            $id_profile = '';
             //Estas editando otro perfil
         }
-       
+
         $newPaciente = Pacientes::updateOrCreate([
             // Añadimos un elemento único que buscara si concuerda si no se creara uno
             //Por ejemplo, el dni que solo lo puede tener un usuario...
             //'dni' => $request->get('dni'),
-            'id'=> $paciente->id,
+            'id' => $paciente->id,
 
         ], [
             'name'     => $request->get('name'),
@@ -98,12 +96,12 @@ class PacientesController extends Controller
             'sex'    => $request->get('sex'),
             'dni'    => $request->get('dni'),
             'birth_date' => $request->get('birth_date'),
-            'registered_by'=> auth()->user()->id,
+            'registered_by' => auth()->user()->id,
             $id_profile,
             // Aquí se puede continuar si se le agregan mas campos al formulario
-            ]);
+        ]);
         return redirect()->route('pacientes.index')
-                        ->with('success', 'Datos actualizados correctamente');
+            ->with('success', 'Datos actualizados correctamente');
     }
 
 
@@ -111,6 +109,6 @@ class PacientesController extends Controller
     {
         $paciente->delete();
         return redirect()->route('pacientes.index')
-                        ->with('success', 'Paciente eliminado correctamente');
+            ->with('success', 'Paciente eliminado correctamente');
     }
 }

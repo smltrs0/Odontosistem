@@ -725,6 +725,10 @@ $mysql_result = [
                                         <textarea name="procedures" id="procedures" class="form-control full-textarea" rows="10">[]</textarea>
                                     </div>
                                 </div>
+
+                            <div class="form-group">
+                                <textarea name="" class="form-control" placeholder="Comentarios"></textarea>
+                            </div>
                         </div>
 
                         <div class="col-md-12">
@@ -1024,5 +1028,7 @@ $mysql_result = [
         <script type="text/javascript" src="{{ asset('assets/scripts/odontograma/vendor.bundle.base.js') }}"></script>
         <!--chard.js-->
         {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css"> --}}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+        <script type="text/javascript" src="{{ asset('assets/scripts/odontograma/odontogram.js') }}"></script>
+        <!--Char.js-->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
 @endsection

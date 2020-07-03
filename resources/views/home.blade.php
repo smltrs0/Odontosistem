@@ -17,12 +17,6 @@
     </div>
 </div>
 
-<div class="card card-shadow-primary mb-5">
-    <div class="card-body">
-       
-    </div>
-</div>
-
 <div class="row">
     <div class="col-md-6 col-lg-3">
         <div class="card-shadow-danger mb-3 widget-chart widget-chart2 text-left card">
@@ -106,6 +100,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="card card-shadow-primary mb-5">
+    <div class="card-body">
+        <label for="pacientes"> Pacientes por atender hoy</label>
+        <div id="pacientes" class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action" href="#1">Paciente 1</a>
+            <a class="list-group-item list-group-item-action" href="#2">Paciente 2</a>
+            <a class="list-group-item list-group-item-action" href="#3">Paciente 3</a>
         </div>
     </div>
 </div>

@@ -32,7 +32,7 @@
 <label for="sex">Sexo</label>
 <div class="form-group" id="sex">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="sex" id="hombre" value="1" @if(old('sex', $paciente->sex== 1))
+        <input class="form-check-input" type="radio" name="sex" id="hombre" disable value="1" @if(old('sex', $paciente->sex== 1))
             checked
         @endif required>
         <label class="form-check-label" for="hombre">
@@ -40,7 +40,7 @@
         </label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="sex" id="mujer" value="0" @if(old('sex', $paciente->sex==0))
+        <input class="form-check-input" disable type="radio" name="sex" id="mujer" value="0" @if(old('sex', $paciente->sex==0))
         checked
     @endif required>
         <label class="form-check-label" for="mujer">

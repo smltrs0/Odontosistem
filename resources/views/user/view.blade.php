@@ -11,36 +11,36 @@
                    @include('custom.message')
 
 
-                
+
                     <form action="{{ route('user.update', $user->id)}}" method="POST">
                      @csrf
                      @method('PUT')
 
                      <div class="container">
 
-                        
 
-                          <h3>Required data</h3>
 
-                         <div class="form-group">                            
-                            <input type="text" class="form-control" 
-                            id="name" 
+                          <h3>Datos requeridos</h3>
+
+                         <div class="form-group">
+                            <input type="text" class="form-control"
+                            id="name"
                             placeholder="Name"
                             name="name"
                             value="{{ old('name', $user->name)}}"
                             disabled>
                           </div>
-                          <div class="form-group">                            
-                            <input type="text" 
-                            class="form-control" 
-                            id="email" 
+                          <div class="form-group">
+                            <input type="text"
+                            class="form-control"
+                            id="email"
                             placeholder="email"
                             name="email"
                             value="{{ old('email' , $user->email)}}"
                             disabled>
                           </div>
-                          
-                          <div class="form-group">                            
+
+                          <div class="form-group">
                             <select disabled class="form-control"  name="roles" id="roles">
                               @foreach($roles as $role)
                                 <option value="{{ $role->id }}"
@@ -49,16 +49,16 @@
                                       selected
                                     @endif
                                   @endisset
-                                
-                                
+
+
                                 >{{ $role->name }}</option>
                               @endforeach
                             </select>
                           </div>
 
-                          
+
                           <hr>
-                          
+
                           <a class="btn btn-success" href="{{route('user.edit',$user->id)}}">Edit</a>
                           <a class="btn btn-danger" href="{{route('user.index')}}">Back</a>
 
