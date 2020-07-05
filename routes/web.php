@@ -43,6 +43,13 @@ Route::resource('/user', 'UserController', ['except' => [
     'create', 'store'
 ]])->names('user');
 
+Route::get('/citas', function (){
+   return view('calendar.index');
+});
+Route::get('/mis-citas',function (){
+   return view('calendar.citas');
+});
+
 Route::get('finanzas', function () {
     return view('finanzas.finanzas');
 })->name('finanzas');

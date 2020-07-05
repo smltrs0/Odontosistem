@@ -126,10 +126,24 @@ $mysql_result = [
                             </div>
                             <div class="col-8">
                               <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">primera cita</div>
-                                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">segunda cita</div>
-                                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-                                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+                                <div class="tab-pane fade show active" id="list-home" role="tabpanel"
+                                     aria-labelledby="list-home-list"><p>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Ab adipisci architecto asperiores assumenda beatae
+                                        consequuntur ducimus fugiat hic ipsum iste itaque minima necessitatibus nulla
+                                        omnis reprehenderit, repudiandae sapiente vero voluptate.</p>
+                                </div>
+                                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"><p>Accusamus, commodi doloremque ducimus earum eligendi nam odit possimus provident
+                                        quis sapiente sed sunt tempore velit veniam vitae! Deserunt facilis fuga fugit
+                                        laborum perferendis reprehenderit repudiandae tempore veritatis, vitae
+                                        voluptatibus?</p></div>
+                                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list"><p>Accusamus, commodi doloremque ducimus earum eligendi nam odit possimus provident
+                                        quis sapiente sed sunt tempore velit veniam vitae! Deserunt facilis fuga fugit
+                                        laborum perferendis reprehenderit repudiandae tempore veritatis, vitae
+                                        voluptatibus?</p></div>
+                                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list"><p>Accusamus, commodi doloremque ducimus earum eligendi nam odit possimus provident
+                                        quis sapiente sed sunt tempore velit veniam vitae! Deserunt facilis fuga fugit
+                                        laborum perferendis reprehenderit repudiandae tempore veritatis, vitae
+                                        voluptatibus?</p></div>
                               </div>
                             </div>
                           </div>

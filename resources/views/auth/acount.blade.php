@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+    <?php   // No esperaba que funcionara a la primera pero si funciono xD
+
+    ?>
 <div class="card mb-3">
 <div class="card-header">Tu perfil de usuario</div>
   <div class="card-body">
