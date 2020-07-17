@@ -27,9 +27,9 @@ Auth::routes();
 // Ruta que permite modificar el usuario creado por laravel
 // agregamos solo un middleware ya que solo necesitamos que el usuario este logueado
 Route::get('/myAcount', function () {
-    $paciente = User::find(auth()->user()->id);
-    return view('auth.acount', compact('paciente'));
-})->name('myacount')->middleware('auth');
+        $paciente = User::find(auth()->user()->id);
+        return view('auth.acount', compact('paciente'));
+    })->name('myacount')->middleware('auth');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -43,12 +43,13 @@ Route::resource('/user', 'UserController', ['except' => [
     'create', 'store'
 ]])->names('user');
 
-Route::get('/citas', function (){
-   return view('calendar.index');
-});
+Route::resource('citas', 'CitasController');
+
+// Solo vistas
+
 Route::get('/mis-citas',function (){
    return view('calendar.citas');
-});
+})->name('mis-citas');
 
 Route::get('finanzas', function () {
     return view('finanzas.finanzas');

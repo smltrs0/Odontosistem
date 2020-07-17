@@ -8,6 +8,7 @@
  =========================================================
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
+
 .border-primary {
     border-color: #3f6ad8
 }
@@ -16528,10 +16529,10 @@ a.badge-alternate:focus {
     border-bottom-left-radius: .25rem
 }
 
-.modal-dialog {
-    box-shadow: 0 0.76875rem 2.4875rem rgba(52, 58, 64, 0.3), 0 1.3375rem 1.70625rem rgba(52, 58, 64, 0.3), 0 0.55rem 0.53125rem rgba(0, 0, 0, 0.05), 0 0.225rem 0.4375rem rgba(52, 58, 64, 0.3);
-    border-radius: .25rem
-}
+/*.modal-dialog {*/
+/*    box-shadow: 0 0.76875rem 2.4875rem rgba(52, 58, 64, 0.3), 0 1.3375rem 1.70625rem rgba(52, 58, 64, 0.3), 0 0.55rem 0.53125rem rgba(0, 0, 0, 0.05), 0 0.225rem 0.4375rem rgba(52, 58, 64, 0.3);*/
+/*    border-radius: .25rem*/
+/*}*/
 
 .nav-item .nav-link {
     font-weight: normal

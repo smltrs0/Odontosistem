@@ -30,15 +30,15 @@ class PacientesController extends Controller
 
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'registered_by'=> 'required',
-        //     'name' => 'required',
-        //     'last_name' => 'required',
-        //     'dni' => 'required |unique:pacientes,dni',
-        //     'address'=> 'required',
-        //     'phone' => 'required',
+        $request->validate([
+            'registered_by' => 'required',
+            'name' => 'required',
+            'last_name' => 'required',
+            'dni' => 'required |unique:pacientes,dni',
+            'address' => 'required',
+            'phone' => 'required',
 
-        // ]);
+        ]);
 
         Pacientes::create($request->all());
 
@@ -61,6 +61,7 @@ class PacientesController extends Controller
 
     public function update(Request $request, Pacientes $paciente)
     {
+
         // Validamos los datos
         $validatedData = $request->validate([
             'name' => 'required',
@@ -74,16 +75,17 @@ class PacientesController extends Controller
 
         if ($paciente->id == auth()->user()->id) {
             $id_profile = array('user_id' => auth()->user()->id);
+            dd($id_profile);
             // Estas editando tu perfil
         } else {
             $id_profile = '';
+            dd('editando otro perfil');
             //Estas editando otro perfil
         }
 
         $newPaciente = Pacientes::updateOrCreate([
             // Añadimos un elemento único que buscara si concuerda si no se creara uno
             //Por ejemplo, el dni que solo lo puede tener un usuario...
-            //'dni' => $request->get('dni'),
             'id' => $paciente->id,
 
         ], [

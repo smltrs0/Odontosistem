@@ -52,11 +52,11 @@
                         <li>
                             <a href="#">
                                 <i class="metismenu-icon"></i>
-                                Citas para hoy
+                                Citas para hoy (Admin)
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('citas.index')}}">
                                 <i class="metismenu-icon">
                                 </i>Ver todas las citas
                             </a>

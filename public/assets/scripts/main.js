@@ -1637,7 +1637,9 @@
           }, r
       }()
   }).call(this, n(158)(e))
-}, function(e, t, n) {
+}, 
+
+function(e, t, n) {
   var i;
   /*!
    * jQuery JavaScript Library v3.3.1
@@ -19596,7 +19598,7 @@
    * A jQuery menu plugin
    * @version 3.0.3
    * @author Osman Nuri Okumus <onokumus@gmail.com> (https://github.com/onokumus)
-   * @license: MIT 
+   * @license: MIT
    */
   e.exports = function(e) {
       "use strict";
@@ -19877,7 +19879,7 @@
           e(document).ready(function() {
               e("#calendar-list").fullCalendar({
                   header: {
-                      left: "prev,next today",
+                      left: "anterior,siguiente hoy",
                       center: "title",
                       right: "listDay,listWeek,month"
                   },
@@ -26647,14 +26649,14 @@
           this.classPrefix = "SVG", d.SVGCanvasElement.parentClass.call(this, "svg"), this.defsElement = new d.SVGElement("defs"), this.node.appendChild(this.defsElement.node), d.AbstractCanvasElement.apply(this, arguments)
       }, d.inherits(d.SVGCanvasElement, d.SVGElement), d.mixin(d.SVGCanvasElement, d.AbstractCanvasElement), d.SVGCanvasElement.prototype.setSize = function(e, t) {
           this.width = e, this.height = t, this.node.setAttribute("width", e), this.node.setAttribute("height", t)
-      }, 
-      d.SVGCanvasElement.prototype.applyTransformParams = function(e, t, n) 
+      },
+      d.SVGCanvasElement.prototype.applyTransformParams = function(e, t, n)
       {
-          this.scale = e, 
-          this.transX = t, 
-          this.transY = n, 
+          this.scale = e,
+          this.transX = t,
+          this.transY = n,
           this.rootElement.node.setAttribute("transform", "scale(" + e + ") translate(" + t + ", " + n + ")")
-      }, 
+      },
       d.SVGShapeElement = function(e, t) {
           d.SVGShapeElement.parentClass.call(this, e, t), d.AbstractShapeElement.apply(this, arguments)
       }, d.inherits(d.SVGShapeElement, d.SVGElement), d.mixin(d.SVGShapeElement, d.AbstractShapeElement), d.SVGShapeElement.prototype.applyAttr = function(e, t) {

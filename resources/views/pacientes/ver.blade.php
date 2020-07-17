@@ -112,35 +112,57 @@ $mysql_result = [
                             </div>
                             <div class="col">
                                 <label for="alergias">Alergias:</label>
-                                Ninguna
+                                <ul>
+                                    @if(true)
+                                    {{'Ninguna'}}
+                                        @else
+                                        {{--aqui va un foreach--}}
+                                    <li>{{'Alguna'}}</li>
+                                    @endif
+                                </ul>
                             </div>
                         </div>
                         <div class="form-row mt-1">
                             <div class="col">
-                                <label for="medicamentos">Habitos:</label>
-                                <textarea class="form-control" name="medicamentos" id="medicamentos"
-                                          readonly></textarea>
+                                <label>Habitos:</label>
+                                <ul>
+                                    <li>Lorem ipsum dolor.</li>
+                                    <li>Itaque, sequi, vero.</li>
+                                    <li>Impedit, mollitia possimus.</li>
+                                    <li>Id, provident, similique.</li>
+                                </ul>
                             </div>
                             <div class="col">
                                 <label for="habitos">Hábitos:</label>
-                                <textarea class="form-control" name="habitos" id="habitos" readonly></textarea>
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Cupiditate nam quam quibusdam temporibus?</li>
+                                    <li>Assumenda aut eos iure sit!</li>
+                                </ul>
                             </div>
                         </div>
                         <div class="form-row mt-1">
                             <div class="col">
                                 <label for="antecedentes-f">Antecedentes familiares:</label>
-                                <textarea class="form-control" name="antecedentes-f" id="antecedentes-f"
-                                          readonly></textarea>
+                                <ul>
+                                    <li>Lorem ipsum dolor sit.</li>
+                                    <li>Eveniet impedit officiis totam.</li>
+                                    <li>A aut ducimus mollitia.</li>
+                                </ul>
                             </div>
                             <div class="col">
                                 <label for="otros">Otros:</label>
-                                <textarea class="form-control" name="otros" id="otros" readonly></textarea>
+                               <ul>
+                                   <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                                   <li>Ducimus earum hic, incidunt iste maxime perferendis veniam!</li>
+                                   <li>Blanditiis debitis dicta ex praesentium soluta tempore voluptate!</li>
+                               </ul>
                             </div>
                         </div>
                         <div class="form-row mt-2">
                             <div class="col">
-                                <label for="">Peso (kgs):</label>
-                                <input class="form-control" type="text" readonly>
+                                <label for="peso">Peso (kgs):</label>
+                                <p id="peso">80Kg</p>
                             </div>
                             <div class="col">
                                 <label for="">Altura (cms):</label>
