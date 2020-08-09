@@ -1,107 +1,55 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header"><h2>Edit User</h2></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header"><h2>Ver datos del usuario</h2></div>
 
-                <div class="card-body">
-                   @include('custom.message')
+                    <div class="card-body">
+                        @include('custom.message')
 
+                        <div class="container">
+                            <div class="form-group">
+                                <div>
+                                    <label for="name">Nombre</label>
+                                    <p id="name">{{ old('name', $user->name)}}</p>
+                                </div>
+                                <div>
+                                    <label for="email">Correo electronico</label>
+                                    <p id="email">{{ old('email' , $user->email)}}</p>
+                                </div>
 
+                            <div>
+                                <label for="roles">Roles:</label>
+                                <ul id="roles">
+                                    @foreach($roles as $role)
+                                        <li value="{{ $role->id }}"
+                                                @isset($user->roles[0]->name)
+                                                @if($role->name ==  $user->roles[0]->name)
+                                                selected
+                                            @endif
+                                            @endisset
 
-                    <form action="{{ route('user.update', $user->id)}}" method="POST">
-                     @csrf
-                     @method('PUT')
-
-                     <div class="container">
-
-
-
-                          <h3>Datos requeridos</h3>
-
-                         <div class="form-group">
-                            <input type="text" class="form-control"
-                            id="name"
-                            placeholder="Name"
-                            name="name"
-                            value="{{ old('name', $user->name)}}"
-                            disabled>
-                          </div>
-                          <div class="form-group">
-                            <input type="text"
-                            class="form-control"
-                            id="email"
-                            placeholder="email"
-                            name="email"
-                            value="{{ old('email' , $user->email)}}"
-                            disabled>
-                          </div>
-
-                          <div class="form-group">
-                            <select disabled class="form-control"  name="roles" id="roles">
-                              @foreach($roles as $role)
-                                <option value="{{ $role->id }}"
-                                  @isset($user->roles[0]->name)
-                                    @if($role->name ==  $user->roles[0]->name)
-                                      selected
-                                    @endif
-                                  @endisset
+                                        >{{ $role->name }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
 
 
-                                >{{ $role->name }}</option>
-                              @endforeach
-                            </select>
-                          </div>
+                            <hr>
+
+                            <a class="btn btn-success" href="{{route('user.edit',$user->id)}}">Editar</a>
+                            <a class="btn btn-danger" href="{{route('user.index')}}">Regresar</a>
 
 
-                          <hr>
-
-                          <a class="btn btn-success" href="{{route('user.edit',$user->id)}}">Edit</a>
-                          <a class="btn btn-danger" href="{{route('user.index')}}">Back</a>
+                        </div>
 
 
-
-
-
-
-
-
-                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </form>
-
-
-
-
-
-
-
-
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

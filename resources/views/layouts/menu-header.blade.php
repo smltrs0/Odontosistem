@@ -74,7 +74,7 @@
                                         <!-- Authentication Links -->
                                         @auth()
                                         <li>
-                                            <a class="dropdown-item" href="{{route('myacount')}}">
+                                            <a class="dropdown-item" href="{{route('mi-cuenta.index')}}">
                                                 Mi cuenta
                                             </a>
                                             <div class="dropdown-divider"></div>

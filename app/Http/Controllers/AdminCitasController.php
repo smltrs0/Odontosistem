@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Citas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 
-class CitasController extends Controller
+class AdminCitasController extends Controller
 {
     public function __construct()
     {
@@ -15,9 +16,10 @@ class CitasController extends Controller
 
     public function index()
     {
-        $citas = DB::table('citas')->where('paciente_id', '=', auth()->user()->id)->get();
+        Gate::authorize('haveaccess','citas.view');
 
-        return view('calendar.citas', compact('citas'));
+        $citas= Citas::all();
+        return view('calendar.index', compact('citas'));
     }
 
     public function create()
@@ -32,7 +34,7 @@ class CitasController extends Controller
         ]);
         $cita= new Citas();
         $cita->fecha=$request->fecha;
-        $cita->paciente_id=auth()->user()->id;
+        $cita->user_id=auth()->user()->id;
         if ($cita->save()){
             return redirect()->route('citas.index')->with('success', 'La cita se ha creado correctamente.');
         }
@@ -56,7 +58,7 @@ class CitasController extends Controller
     {
         $datosValidados = $request->validate([
             'fecha' => 'required',
-            'paciente_id'=>'auth()->user()->id',
+            'user_id'=>'auth()->user()->id',
 
         ]);
         Citas::whereId($citas)->update($datosValidados);

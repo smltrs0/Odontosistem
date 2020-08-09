@@ -23,7 +23,7 @@ class UserController extends Controller
     public function index()
     {
         Gate::authorize('haveaccess', 'user.index');
-        $users =  User::with('roles')->orderBy('id', 'Desc')->paginate(2);
+        $users =  User::with('roles')->orderBy('id', 'Desc')->paginate(10);
         //return $users;
 
         return view('user.index', compact('users'));
@@ -94,11 +94,11 @@ class UserController extends Controller
             'email'         => 'required|max:50|unique:users,email,'.$user->id
         ]);
 
-        
-            
-        return dd($newPaciente);
 
-        /*
+
+
+
+
         if ($request->update) {
             $user->update($request->all());
             return redirect()->route('myacount')->with('status_success', 'You acount updated successfully');
@@ -108,7 +108,7 @@ class UserController extends Controller
             return redirect()->route('user.index')
                 ->with('status_success', 'User updated successfully');
         }
-        */
+
     }
 
     /**

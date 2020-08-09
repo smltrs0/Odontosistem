@@ -1,12 +1,16 @@
 @extends('layouts.app')
 @section('content')
-    <?php   // No esperaba que funcionara a la primera pero si funciono xD
-
+    <?php
+    // No esperaba que funcionara a la primera pero si funciono xD
+    // Esto deberia estar en el controlador!
+    if(!$paciente->pacientes){
+        $paciente->pacientes= new \App\Pacientes();
+    }
     ?>
 <div class="card mb-3">
 <div class="card-header">Tu perfil de usuario</div>
   <div class="card-body">
-    <form action="{{ route('pacientes.update', auth()->user()->id)}}" method="POST">
+    <form action="{{ route('mi-cuenta.update', auth()->user()->id)}}" method="POST">
       @csrf
       @method('PUT')
       <input type="text" name="update" value="true" hidden>

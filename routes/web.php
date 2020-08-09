@@ -26,10 +26,8 @@ Auth::routes();
 
 // Ruta que permite modificar el usuario creado por laravel
 // agregamos solo un middleware ya que solo necesitamos que el usuario este logueado
-Route::get('/myAcount', function () {
-        $paciente = User::find(auth()->user()->id);
-        return view('auth.acount', compact('paciente'));
-    })->name('myacount')->middleware('auth');
+
+Route::resource('/mi-cuenta', 'MyAcountController');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -46,11 +44,21 @@ Route::resource('/user', 'UserController', ['except' => [
 Route::resource('citas', 'CitasController');
 
 // Solo vistas
-
-Route::get('/mis-citas',function (){
-   return view('calendar.citas');
-})->name('mis-citas');
+Route::resource('/citas-hoy','AdminCitasController');
 
 Route::get('finanzas', function () {
     return view('finanzas.finanzas');
 })->name('finanzas');
+
+
+// Ruta para crear PDF de ejemplo
+Route::get('generate-pdf','PDFController@generatePDF');
+
+Route::get('test', function(){
+    $paciente =DB::table('pacientes')
+        ->rightJoin('citas', 'pacientes.id', '=', 'citas.paciente_id')
+        ->get();
+   dd($paciente);
+});
+
+

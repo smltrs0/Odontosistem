@@ -5,14 +5,17 @@
     <div class="card">
         <div class="card-header">Mis citas</div>
         <div class="card-body">
-            @if($citas->count() == 0)
+           @if(!isset(auth()->user()->pacientes->name))
+               primero debes completar los datos
+            @elseif($citas->count() == 0)
             <div class="alert alert-warning text-center">
+                citas.blade.php
 
-                No tienes ninguna cita para hoy {{auth()->user()->pacientes->name }}
+                No tienes ninguna cita.
             </div>
             @endif
             <ul class="list-group">
-                @foreach($citas as $elemento)
+                @foreach($citas ?? '' as $elemento)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     {{$elemento->fecha}}
                     <div>

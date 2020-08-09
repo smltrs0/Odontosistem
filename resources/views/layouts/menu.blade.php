@@ -50,7 +50,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="{{route('citas-hoy.index')}}">
                                 <i class="metismenu-icon"></i>
                                 Citas para hoy (Admin)
                             </a>
@@ -58,7 +58,7 @@
                         <li>
                             <a href="{{route('citas.index')}}">
                                 <i class="metismenu-icon">
-                                </i>Ver todas las citas
+                                </i>Ver mis citas
                             </a>
                         </li>
                     </ul>

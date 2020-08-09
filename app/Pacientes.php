@@ -28,4 +28,8 @@ class Pacientes extends Model
     {
         return  $this->belongsTo('App\User');
     }
+    public function citas()
+    {
+        return $this->hasMany('App\Citas');
+    }
 }

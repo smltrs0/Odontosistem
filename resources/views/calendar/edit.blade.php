@@ -4,9 +4,9 @@
         <div class="card">
             <div class="card-header">Editar cita</div>
             <div class="card-body">
-                <form action="{{ route('citas.update', $citas->id) }}">
+                <form action="{{ route('citas.update', $citas->id) }}" method="POST">
                     @csrf
-                    @method('PATCH')
+                    @method('PUT')
                     <div class="form-group">
                         <label for="CitaCreada">Fecha creacion</label>
                         <p id="CitaCreada">{{$citas->created_at}}</p>
@@ -17,9 +17,10 @@
                     </div>
                     <div class="form-group">
                         <label for="ActualizarCita">Selecciona la nueva fecha para la cita</label>
-                        <input id="ActualizarCita" class="form-control" type="date" min="" value="{{$citas->fecha}}">
+                        <input id="ActualizarCita" class="form-control" name="fecha" type="date" min=""
+                               value="{{$citas->fecha}}">
                     </div>
-                    <input type="submit" class="btn btn-primary">
+                    <input type="submit" class="btn btn-primary" value="Actualizar">
                 </form>
             </div>
         </div>
