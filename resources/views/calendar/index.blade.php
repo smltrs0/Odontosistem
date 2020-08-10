@@ -12,9 +12,9 @@
 
                           @foreach($citas as $cita)
 
-                              {{dd($cita)}}
+
                           <li class="list-group-item">{{$cita->fecha}}  <a class="align-content-end" href="{{route
-                          ('pacientes.show',2)}}">Ver paciente</a></li>
+                          ('pacientes.show',$cita->paciente_id)}}">Ver paciente</a></li>
 
                           @endforeach
                   </ul>

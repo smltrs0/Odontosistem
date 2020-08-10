@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Citas;
+use App\Pacientes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,9 +16,18 @@ class CitasController extends Controller
 
     public function index()
     {
-        $citas = DB::table('citas')->where('paciente_id', '=', auth()->user()->id)->get();
+        $paciente_id =  DB::table('pacientes')->select('id')->where('user_id', '=', auth()->user()->id)->get();
+        $citas='';
 
-        return view('calendar.citas', compact('citas'));
+        if (!isset($paciente_id[0]->id)){
+            // Esto es para saber si el usuario tiene un perfil de paciente creado
+           $existe = false;
+        }else{
+            $existe= true;
+            $citas = DB::table('citas')->where('paciente_id', '=', $paciente_id[0]->id)->get();
+        }
+
+        return view('calendar.citas', compact('citas', 'existe'));
     }
 
     public function create()
@@ -27,12 +37,20 @@ class CitasController extends Controller
 
     public function store(Request $request)
     {
+
+        $paciente_id =  DB::table('pacientes')->select('id')->where('user_id', '=', auth()->user()->id)->get();
+
         $request->validate([
             'fecha' => 'required',
+            'hora'=>'required',
         ]);
+
+
         $cita= new Citas();
         $cita->fecha=$request->fecha;
-        $cita->paciente_id=auth()->user()->id;
+        $cita->hora=$request->hora;
+        $cita->paciente_id=$paciente_id[0]->id;
+
         if ($cita->save()){
             return redirect()->route('citas.index')->with('success', 'La cita se ha creado correctamente.');
         }
@@ -56,6 +74,7 @@ class CitasController extends Controller
     {
         $datosValidados = $request->validate([
             'fecha' => 'required',
+            'hora'=> 'required',
             'paciente_id'=>'auth()->user()->id',
 
         ]);

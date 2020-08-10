@@ -654,9 +654,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-12">
-                    <button class="btn btn-success">Guardar</button>
-                </div>
+
             </div>
             <!-- ./row -->
         </div>

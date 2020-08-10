@@ -77,6 +77,7 @@
                                             <a class="dropdown-item" href="{{route('mi-cuenta.index')}}">
                                                 Mi cuenta
                                             </a>
+                                            <a href="#config" class="dropdown-item" id="config">Configuración</a>
                                             <div class="dropdown-divider"></div>
                                             <div aria-labelledby="navbarDropdown">
                                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();

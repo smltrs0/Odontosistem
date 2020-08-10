@@ -33,7 +33,7 @@ Route::resource('/mi-cuenta', 'MyAcountController');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::resource('pacientes', 'PacientesController');
+Route::resource('/pacientes', 'PacientesController');
 
 Route::resource('/role', 'RoleController')->names('role');
 

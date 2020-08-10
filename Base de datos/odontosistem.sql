@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 05, 2020 at 01:35 AM
+-- Generation Time: Aug 09, 2020 at 03:10 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -19,10 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `permisos`
+-- Database: `odontosistem`
 --
-CREATE DATABASE IF NOT EXISTS `permisos` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `permisos`;
 
 -- --------------------------------------------------------
 
@@ -51,20 +49,6 @@ CREATE TABLE `migrations` (
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2020_03_31_113105_create_roles_table', 1),
-(5, '2020_03_31_113548_create_role_user_table', 1),
-(6, '2020_04_06_125005_create_permissions_table', 1),
-(7, '2020_04_06_125249_create_permission_role_table', 1),
-(8, '2020_05_26_150714_create_pacientes_table', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -78,10 +62,11 @@ CREATE TABLE `pacientes` (
   `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `second_last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `dni` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `birth_date` date NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `sex` tinyint(1) NOT NULL,
+  `sex` tinyint(1) DEFAULT NULL,
   `height` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `weight` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `medical_history` json DEFAULT NULL,
@@ -96,11 +81,12 @@ CREATE TABLE `pacientes` (
 -- Dumping data for table `pacientes`
 --
 
-INSERT INTO `pacientes` (`id`, `name`, `second_name`, `last_name`, `second_last_name`, `dni`, `birth_date`, `address`, `phone`, `sex`, `height`, `weight`, `medical_history`, `procedures`, `user_id`, `registered_by`, `created_at`, `updated_at`) VALUES
-(1, 'angelo', 'Rafael', 'Amaro', 'Trujillo', '252525', '2020-06-04', 'marhuanta', '11111111111111', 1, NULL, NULL, NULL, NULL, NULL, 1, NULL, '2020-06-07 20:54:56'),
-(2, 'Samuel', 'Emmanuel', 'Trias', 'Santamaria', '24186725', '1994-12-10', 'Marhuanta', '04163891799', 1, NULL, NULL, NULL, NULL, 1, 1, '2020-06-05 12:05:45', '2020-06-05 20:06:34'),
-(5, 'lisbeth', 'josefina', 'santamaria', NULL, '12602327', '1994-12-10', 'Marhuanta', '04163891799', 0, NULL, NULL, NULL, NULL, NULL, 1, '2020-06-05 16:59:39', '2020-06-05 16:59:39'),
-(8, 'Saul', NULL, 'Yanave', 'Guilarte', '25914064', '1997-10-31', 'Marhuanta', '04163891799', 1, NULL, NULL, NULL, NULL, NULL, 1, '2020-06-05 23:49:54', '2020-06-26 13:16:31');
+INSERT INTO `pacientes` (`id`, `name`, `second_name`, `last_name`, `second_last_name`, `dni`, `email`, `birth_date`, `address`, `phone`, `sex`, `height`, `weight`, `medical_history`, `procedures`, `user_id`, `registered_by`, `created_at`, `updated_at`) VALUES
+(1, 'angelo', 'Rafael', 'Amaro', 'Trujillo', '252525', NULL, '2020-06-04', 'marhuanta', '11111111111111', 1, NULL, NULL, NULL, NULL, NULL, 1, NULL, '2020-06-07 20:54:56'),
+(2, 'Samuel', 'Emmanuel', 'Emmanuel', 'Santamaria', '24186725', NULL, '1994-12-10', 'San José', '04163891799', 1, NULL, NULL, NULL, NULL, 1, 1, '2020-06-05 12:05:45', '2020-08-09 01:55:22'),
+(8, 'Saul', NULL, 'Yanave', 'Guilarte', '25914064', NULL, '1997-10-31', 'Marhuanta', '04163891799', 1, NULL, NULL, NULL, NULL, NULL, 1, '2020-06-05 23:49:54', '2020-06-26 13:16:31'),
+(9, 'ivan', NULL, 'ascanio', NULL, '25252525', 'ivan@test.com', '1995-07-01', 'Su casa', '21', 1, NULL, NULL, NULL, NULL, NULL, 1, '2020-07-27 04:30:00', '2020-08-09 15:02:29'),
+(13, 'Loidy', 'josefina', 'josefina', NULL, '259140641', NULL, '2020-08-04', 'San José', '21121', 0, NULL, NULL, NULL, NULL, 5, 5, '2020-08-09 01:52:06', '2020-08-09 02:56:01');
 
 -- --------------------------------------------------------
 
@@ -187,7 +173,7 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `name`, `slug`, `description`, `full-access`, `created_at`, `updated_at`) VALUES
 (1, 'Admin', 'admin', 'Administrator', 'yes', '2020-06-05 02:33:21', '2020-06-05 02:33:21'),
-(2, 'Invitado', 'guest', 'sin control ni acceso', 'no', '2020-06-05 18:18:00', '2020-06-05 18:18:00');
+(2, 'Invitado', 'guest', 'sin ningún tipo de control ni acceso', 'no', '2020-06-05 18:18:00', '2020-07-13 19:56:11');
 
 -- --------------------------------------------------------
 
@@ -208,7 +194,8 @@ CREATE TABLE `role_user` (
 --
 
 INSERT INTO `role_user` (`id`, `role_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, '2020-06-05 02:33:21', '2020-06-05 02:33:21');
+(1, 1, 1, '2020-06-05 02:33:21', '2020-06-05 02:33:21'),
+(2, 2, 3, '2020-08-08 17:20:00', '2020-08-08 17:20:00');
 
 -- --------------------------------------------------------
 
@@ -232,8 +219,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@admin.com', NULL, '$2y$10$gVcSaZpcdcnVhGGbU3M0rukwY8OD.E9z45m73CQ3wK2Vn9nq/jTBO', 'JLZMVaadOGDb6PXzNx9L1DNpwTKNVFUXsmzcHtafbBu4B0dGKOnASTFpWTOn', '2020-06-05 02:33:21', '2020-06-05 02:33:21'),
-(2, 'nuevo', 'test@test.com', NULL, '$2y$10$xFS7OjKNlCyBmtVWxq2TneUYSQDqzxpGs5kK3hlUvBc1Gwd8Xzh.S', NULL, '2020-07-03 20:49:14', '2020-07-03 20:49:14');
+(1, 'admin', 'admin@admin.com', NULL, '$2y$10$gVcSaZpcdcnVhGGbU3M0rukwY8OD.E9z45m73CQ3wK2Vn9nq/jTBO', 'XI27rjVHJkacWH8WVQoIxQJaGaIzt9gLzLysOJt7ELiKGtRAmwCiiX5CFXIz', '2020-06-05 02:33:21', '2020-06-05 02:33:21'),
+(3, 'lisbeth santmaria', 'lisbethsantamaria2009@hotmail.com', NULL, '$2y$10$lZeb6zWrDWBU/P1AtVfEaOK0ugg2Wf4YO3u8J4xrVM/tqM07ydLzK', NULL, '2020-08-08 17:16:36', '2020-08-08 17:16:36'),
+(5, 'Loidy Torrealba', 'test@test.com', NULL, '$2y$10$MKr1A1RHcpZiO5oh8Fek8eu//qvJCxMQu9dtmamiTkPQp1ifmAnZK', NULL, '2020-08-08 21:32:36', '2020-08-09 02:54:42');
 
 --
 -- Indexes for dumped tables
@@ -325,7 +313,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -349,19 +337,18 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `role_user`
 --
 ALTER TABLE `role_user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
 --
 
---
 --
 -- Constraints for table `pacientes`
 --

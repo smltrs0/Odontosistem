@@ -104,12 +104,24 @@
     </div>
 </div>
 <div class="card card-shadow-primary mb-5">
+
     <div class="card-body">
-        <label for="pacientes"> Pacientes por atender hoy</label>
+
         <div id="pacientes" class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action" href="#1">Paciente 1</a>
-            <a class="list-group-item list-group-item-action" href="#2">Paciente 2</a>
-            <a class="list-group-item list-group-item-action" href="#3">Paciente 3</a>
+            <div class="d-flex justify-content-between align-items-center"> <strong>Turno</strong>  <strong> Nombre
+                                                                                                               del paciente</strong>
+               <strong>Estado del paciente</strong>
+            </div>
+            <?php $contador=1; ?>
+            @foreach($citas as $cita)
+                <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                   href="{{route('pacientes.show', $cita->id_paciente)}}"> {{$contador++.".º"}} <div>{{ucfirst
+                   ($cita->name)." "
+                   .ucfirst($cita->last_name)}}</div>
+                    <span
+                        class="badge badge-pill
+                   badge-success">atendido</span></a>
+            @endforeach
         </div>
     </div>
 </div>

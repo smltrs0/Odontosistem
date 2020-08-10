@@ -20,6 +20,10 @@
                         <input id="ActualizarCita" class="form-control" name="fecha" type="date" min=""
                                value="{{$citas->fecha}}">
                     </div>
+                    <div class="form-group">
+                        <label for="hora-cita">Selecciona la nueva hora para la cita</label>
+                        <input class="form-control" type="time" name="hora" id="hora-cita" value="{{$citas->hora}}">
+                    </div>
                     <input type="submit" class="btn btn-primary" value="Actualizar">
                 </form>
             </div>
@@ -33,10 +37,12 @@
         var _mes = fecha.getMonth();//viene con valores de 0 al 11
         _mes = _mes + 1;//ahora lo tienes de 1 al 12
         if (_mes < 10)//ahora le agregas un 0 para el formato date
-        { var mes = "0" + _mes;}
-        else
-        { var mes = _mes.toString;}
-        document.getElementById("ActualizarCita").min = anio+'-'+mes+'-'+dia;
+        {
+            var mes = "0" + _mes;
+        } else {
+            var mes = _mes.toString;
+        }
+        document.getElementById("ActualizarCita").min = anio + '-' + mes + '-' + dia;
     </script>
 
 @endsection

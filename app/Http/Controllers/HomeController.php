@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Citas;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $date = now()->format('Y-m-d');
+//
+        $citas= Citas::select('citas.fecha', 'citas.hora', 'citas.id as id_cita', 'pacientes.id as id_paciente', 'pacientes.name', 'pacientes.last_name' )
+            ->join('pacientes', 'citas.paciente_id', '=', 'pacientes.id')->where('citas.fecha', '=', $date)->orderBy('citas.created_at', 'ASC')->get();
+
+        return view('home', compact('citas'));
     }
 }

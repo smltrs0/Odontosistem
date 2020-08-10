@@ -24,7 +24,7 @@ class PacientesController extends Controller
     public function create()
     {
         return view('pacientes.agregar', [
-            'paciente' => new Pacientes
+            'paciente' => new Pacientes,
         ]);
     }
 
@@ -37,7 +37,7 @@ class PacientesController extends Controller
             'dni' => 'required |unique:pacientes,dni',
             'address' => 'required',
             'phone' => 'required',
-
+            'email' => 'required',
         ]);
 
         Pacientes::create($request->all());
@@ -48,8 +48,6 @@ class PacientesController extends Controller
 
     public function show(Pacientes $paciente)
     {
-
-        //solicitamos los datos de este paciente
         return view('pacientes.ver', compact('paciente'));
     }
 
@@ -59,10 +57,10 @@ class PacientesController extends Controller
     }
 
 
-    public function update(Request $request,Pacientes $paciente)
+    public function update(Request $request, Pacientes $paciente)
     {
 
-        $validatedData = $request->validate([
+         $request->validate([
             'name' => 'required',
             'last_name' => 'required',
             'dni' => 'required',
@@ -70,34 +68,34 @@ class PacientesController extends Controller
             'sex' => 'required',
             'phone' => 'required',
             'address' => 'required',
-            'email'=> 'required'
+            'email' => 'required',
         ]);
 
-             $paciente->update([
-                'name' => $request->get('name'),
-                'second_name' => $request->get('second_name'),
-                'last_name' => $request->get('last_name'),
-                'second_last_name' => $request->get('second_last_name'),
-                'phone' => $request->get('phone'),
-                'address' => $request->get('address'),
-                'sex' => $request->get('sex'),
-                'dni' => $request->get('dni'),
-                'birth_date' => $request->get('birth_date'),
-                'registered_by' => auth()->user()->id,
-                'id' => $paciente,
-            ]);
+        $paciente->update([
+            'id' => $paciente,
+            'name' => $request->get('name'),
+            'second_name' => $request->get('second_name'),
+            'last_name' => $request->get('last_name'),
+            'second_last_name' => $request->get('second_last_name'),
+            'phone' => $request->get('phone'),
+            'address' => $request->get('address'),
+            'email' => $request->get('email'),
+            'sex' => $request->get('sex'),
+            'dni' => $request->get('dni'),
+            'birth_date' => $request->get('birth_date'),
+            'registered_by' => auth()->user()->id,
+            'procedures'=> $request->get('procedures'),
+            'otros'=> $request->get('otros'),
+            "embarazada" => $request->get('embarazada'),
+            "coagulacion" => $request->get('coagulacion'),
+            "anestesicos" => $request->get('anestesicos'),
+            'antecedentes' => json_encode(explode(',', $request->antecedentes)),
+            'habitos' => json_encode(explode(',', $request->habitos)),
+            'alergias'=> json_encode(explode(',', $request->alergias)),
+        ]);
 
-            if ($paciente->user_id == !null){
-                $user = User::find($paciente->user_id);
-                $user->update([
-                    'email' => $request->get('email')
-                        ]);
-            }
+        return redirect()->route('pacientes.index')->with('success', 'Datos actualizados correctamente');
 
-//        $newPaciente = Pacientes::updateOrCreate(['id' => $paciente],
-//            ['name' => $request->get('name'), 'second_name' => $request->get('second_name'), 'last_name' => $request->get('last_name'), 'second_last_name' => $request->get('second_last_name'), 'phone' => $request->get('phone'), 'address' => $request->get('address'), 'sex' => $request->get('sex'), 'dni' => $request->get('dni'), 'birth_date' => $request->get('birth_date'), 'registered_by' => auth()->user()->id,]);
-        return redirect()->route('pacientes.index')
-            ->with('success', 'Datos actualizados correctamente');
     }
 
 
