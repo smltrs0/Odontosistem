@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 09, 2020 at 03:10 PM
+-- Generation Time: Aug 10, 2020 at 08:11 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -21,6 +21,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `odontosistem`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `citas`
+--
+
+CREATE TABLE `citas` (
+  `id` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `hora` time DEFAULT NULL,
+  `paciente_id` bigint(20) UNSIGNED NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `citas`
+--
+
+INSERT INTO `citas` (`id`, `fecha`, `hora`, `paciente_id`, `updated_at`, `created_at`) VALUES
+(6, '2020-08-10', '23:00:00', 9, '2020-08-24 00:00:00', '2020-08-11 00:00:00'),
+(10, '2020-08-10', '16:04:00', 16, '2020-08-09 17:00:01', '2020-08-09 17:00:01'),
+(11, '2020-08-10', '23:08:00', 2, '2020-08-09 23:05:10', '2020-08-09 23:05:10');
 
 -- --------------------------------------------------------
 
@@ -60,6 +84,7 @@ CREATE TABLE `pacientes` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `second_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `otros` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `second_last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `dni` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -69,6 +94,9 @@ CREATE TABLE `pacientes` (
   `sex` tinyint(1) DEFAULT NULL,
   `height` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `weight` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `antecedentes` json DEFAULT NULL,
+  `habitos` json DEFAULT NULL,
+  `alergias` json DEFAULT NULL,
   `medical_history` json DEFAULT NULL,
   `procedures` json DEFAULT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
@@ -81,12 +109,12 @@ CREATE TABLE `pacientes` (
 -- Dumping data for table `pacientes`
 --
 
-INSERT INTO `pacientes` (`id`, `name`, `second_name`, `last_name`, `second_last_name`, `dni`, `email`, `birth_date`, `address`, `phone`, `sex`, `height`, `weight`, `medical_history`, `procedures`, `user_id`, `registered_by`, `created_at`, `updated_at`) VALUES
-(1, 'angelo', 'Rafael', 'Amaro', 'Trujillo', '252525', NULL, '2020-06-04', 'marhuanta', '11111111111111', 1, NULL, NULL, NULL, NULL, NULL, 1, NULL, '2020-06-07 20:54:56'),
-(2, 'Samuel', 'Emmanuel', 'Emmanuel', 'Santamaria', '24186725', NULL, '1994-12-10', 'San José', '04163891799', 1, NULL, NULL, NULL, NULL, 1, 1, '2020-06-05 12:05:45', '2020-08-09 01:55:22'),
-(8, 'Saul', NULL, 'Yanave', 'Guilarte', '25914064', NULL, '1997-10-31', 'Marhuanta', '04163891799', 1, NULL, NULL, NULL, NULL, NULL, 1, '2020-06-05 23:49:54', '2020-06-26 13:16:31'),
-(9, 'ivan', NULL, 'ascanio', NULL, '25252525', 'ivan@test.com', '1995-07-01', 'Su casa', '21', 1, NULL, NULL, NULL, NULL, NULL, 1, '2020-07-27 04:30:00', '2020-08-09 15:02:29'),
-(13, 'Loidy', 'josefina', 'josefina', NULL, '259140641', NULL, '2020-08-04', 'San José', '21121', 0, NULL, NULL, NULL, NULL, 5, 5, '2020-08-09 01:52:06', '2020-08-09 02:56:01');
+INSERT INTO `pacientes` (`id`, `name`, `second_name`, `last_name`, `otros`, `second_last_name`, `dni`, `email`, `birth_date`, `address`, `phone`, `sex`, `height`, `weight`, `antecedentes`, `habitos`, `alergias`, `medical_history`, `procedures`, `user_id`, `registered_by`, `created_at`, `updated_at`) VALUES
+(1, 'angelo', 'Rafael', 'Amaro', NULL, 'Trujillo', '252525', NULL, '2020-06-04', 'marhuanta', '11111111111111', 1, NULL, NULL, 'null', 'null', 'null', NULL, NULL, NULL, 1, NULL, '2020-06-07 20:54:56'),
+(2, 'Samuel', 'emmanuel', 'Trias', NULL, 'Santamaria', '24186725', NULL, '1994-12-10', 'San José', '04163891799', 1, NULL, NULL, 'null', 'null', 'null', NULL, NULL, 1, 1, '2020-06-05 12:05:45', '2020-08-10 03:35:35'),
+(8, 'Saul', NULL, 'Yanave', NULL, 'Guilarte', '25914064', NULL, '1997-10-31', 'Marhuanta', '04163891799', 1, NULL, NULL, 'null', 'null', 'null', NULL, NULL, NULL, 1, '2020-06-05 23:49:54', '2020-06-26 13:16:31'),
+(9, 'ivan', NULL, 'ascanio', NULL, NULL, '25252525', 'ivan@test.com', '1995-07-01', 'Su casa', '21', 1, NULL, NULL, 'null', 'null', 'null', NULL, NULL, NULL, 1, '2020-07-27 04:30:00', '2020-08-09 15:02:29'),
+(16, 'Loidy', NULL, 'Torrealba', NULL, NULL, '25914065', 'test@test.com', '2020-08-11', 'San José', '11111111111111', 0, NULL, NULL, '[\"test\", \"\"]', '[\"test\", \"\"]', '[\"test\", \" otra alergia\", \" mariscos\", \"\"]', NULL, '[]', 5, 1, '2020-08-09 21:29:49', '2020-08-10 19:05:31');
 
 -- --------------------------------------------------------
 
@@ -228,6 +256,13 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 --
 
 --
+-- Indexes for table `citas`
+--
+ALTER TABLE `citas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `paciente_id` (`paciente_id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -298,6 +333,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `citas`
+--
+ALTER TABLE `citas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -307,13 +348,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -348,6 +389,12 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `citas`
+--
+ALTER TABLE `citas`
+  ADD CONSTRAINT `FK_citas_pacientes` FOREIGN KEY (`paciente_id`) REFERENCES `pacientes` (`id`);
 
 --
 -- Constraints for table `pacientes`
