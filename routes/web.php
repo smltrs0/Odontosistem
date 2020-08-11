@@ -61,4 +61,8 @@ Route::get('test', function(){
    dd($paciente);
 });
 
-
+// Rutas para el backup
+Route::get('backup', 'BackupController@index');
+Route::get('backup/create', 'BackupController@create');
+Route::get('backup/download/{file_name}', 'BackupController@download');
+Route::get('backup/delete/{file_name}', 'BackupController@delete');
