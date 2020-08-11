@@ -7,7 +7,7 @@
                 Respaldo de la base de datos
             </div>
             <div class="card-body">
-                <a href="{{ url('backup/create') }}" class="btn bg-malibu-beach" title="Crear nuevo backup">
+                <a href="{{ url('backup/create') }}" class="btn btn-danger" title="Crear nuevo backup">
                     <i class="fa fa-plus" aria-hidden="true"></i> Crear nuevo respaldo
                 </a>
 

@@ -43,6 +43,12 @@ Route::resource('/user', 'UserController', ['except' => [
 
 Route::resource('citas', 'CitasController');
 
+// Rutas para el backup
+Route::get('backup', 'BackupController@index')->name('respaldo');
+Route::get('backup/create', 'BackupController@create');
+Route::get('backup/download/{file_name}', 'BackupController@download');
+Route::get('backup/delete/{file_name}', 'BackupController@delete');
+
 // Solo vistas
 Route::resource('/citas-hoy','AdminCitasController');
 
@@ -61,8 +67,4 @@ Route::get('test', function(){
    dd($paciente);
 });
 
-// Rutas para el backup
-Route::get('backup', 'BackupController@index');
-Route::get('backup/create', 'BackupController@create');
-Route::get('backup/download/{file_name}', 'BackupController@download');
-Route::get('backup/delete/{file_name}', 'BackupController@delete');
+
