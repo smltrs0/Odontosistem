@@ -20,9 +20,7 @@ class BackupController extends Controller
         $disk = Storage::disk(config('backup.backup.destination.disks')[0]);
         $files = $disk->files(config('backup.backup.name'));
         $backups = [];
-        // make an array of backup files, with their filesize and creation date
         foreach ($files as $k => $f) {
-            // only take the zip files into account
             if (substr($f, -4) == '.zip' && $disk->exists($f)) {
                 $backups[] = [
                     'file_path' => $f,
@@ -32,14 +30,13 @@ class BackupController extends Controller
                 ];
             }
         }
-        // reverse the backups, so the newest one would be on top
         $backups = array_reverse($backups);
         return view("backup.backups")->with(compact('backups'));
     }
+
     public function create()
     {
         try {
-            // start the backup process
             Artisan::call('backup:run', ['--only-db' => 'true']);
             $output = Artisan::output();
             // log the results
@@ -47,15 +44,10 @@ class BackupController extends Controller
             // return the results as a response to the ajax call
             return redirect()->back()->with('alert', 'Respaldo realizado exitosamente');
         } catch (Exception $e) {
-            Flash::error($e->getMessage());
-            return redirect()->back();
+            return redirect()->back()->with('error', $e->getMessage());
         }
     }
-    /**
-     * Downloads a backup zip file.
-     *
-     * TODO: make it work no matter the flysystem driver (S3 Bucket, etc).
-     */
+
     public function download($file_name)
     {
         $file = config('backup.backup.name') . '/' . $file_name;
@@ -71,7 +63,7 @@ class BackupController extends Controller
                 "Content-disposition" => "attachment; filename=\"" . basename($file) . "\"",
             ]);
         } else {
-            abort(404, "The backup file doesn't exist.");
+            abort(404);
         }
     }
     /**
@@ -84,7 +76,7 @@ class BackupController extends Controller
             $disk->delete(config('backup.backup.name') . '/' . $file_name);
             return redirect()->back();
         } else {
-            abort(404, "The backup file doesn't exist.");
+            abort(404);
         }
     }
 }

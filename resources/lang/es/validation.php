@@ -152,7 +152,8 @@ return [
         'last_name' => 'primer apellido',
         'email' => 'correo electrónico',
         'dni' => 'documento nacional de identificación',
-        'address ' => 'dirección'
+        'address ' => 'dirección',
+        'phone'=> 'telefono'
     ],
 
 ];

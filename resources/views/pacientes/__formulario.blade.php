@@ -11,7 +11,7 @@
         </div>
         <div class="col">
             <input type="text" class="form-control" name="last_name" placeholder="{{__('Last name')}}"
-                   value="{{old('second_name', $paciente->last_name)}}">
+                   value="{{old('last_name', $paciente->last_name)}}">
         </div>
         <div class="col">
             <input type="text" class="form-control" name="second_last_name" placeholder="{{__('Second last name')}}"
@@ -33,7 +33,7 @@
     <label for="sex">Sexo</label>
     <div class="form-group" id="sex">
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="sex" id="hombre" disable value="1" @if(old('sex', $paciente->sex== 1))
+            <input class="form-check-input" type="radio" name="sex" id="hombre" value="1" @if(old('sex', $paciente->sex == 1))
             checked
                    @endif required>
             <label class="form-check-label" for="hombre">
@@ -41,9 +41,7 @@
             </label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" disable type="radio" name="sex" id="mujer" value="0" @if(old('sex', $paciente->sex==0))
-            checked
-                   @endif required>
+            <input class="form-check-input" type="radio" name="sex" id="mujer" value="0" @if(old('sex', $paciente->sex==0))checked @endif required>
             <label class="form-check-label" for="mujer">
                 Mujer
             </label>

@@ -9,6 +9,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/base.css') }}" rel="stylesheet">
 
+
     <script src="https://kit.fontawesome.com/eba26df4c2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
@@ -17,7 +18,7 @@
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.4/css/simple-line-icons.css">
-
+    <link rel="stylesheet" href="{{asset('css/bootstrap-mod.css')}}">
     @yield('odontograma')
     @yield('finanza')
 </head>
@@ -68,7 +69,7 @@
             $(this).parent().removeClass("active")
         });
     $(".dropdown-menu").on("click", function (e) {
-        var t = r.a._data(document, "events") || {};
+        var t = $.a._data(document, "events") || {};
         t = t.click || [];
         for (var n = 0; n < t.length; n++) t[n].selector && ($(e.target).is(t[n].selector) && t[n].handler.call(e
             .target, e), $(e.target).parents(t[n].selector).each(function () {
@@ -76,18 +77,15 @@
         }));
         e.stopPropagation()
     });
-    $(function () {
-        $('[data-toggle="popover"]').popover()
-    });
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    });
+
+
     $(".mobile-toggle-nav").click(function () {
-        $(this).toggleClass("is-active");
+            $(this).toggleClass("is-active");
             $(".app-container").toggleClass("sidebar-mobile-open")
     });
         $(".mobile-toggle-header-nav").click(function () {
-        $(this).toggleClass("active"), $(".app-header__content").toggleClass("header-mobile-open")
+            $(this).toggleClass("active");
+            $(".app-header__content").toggleClass("header-mobile-open");
     });
 
     $(window).on("resize", function () {
@@ -95,11 +93,18 @@
             ".app-container").removeClass("closed-sidebar-mobile closed-sidebar")
     })
     // Menu de configuracion
+
     $(document).ready(function () {
+
         $(".btn-open-options, #config").click(function () {
+            if ($('.ui-theme-settings').hasClass('settings-open')){
+                $('#TooltipDemo').addClass('d-none');
+            }else{
+                $('#TooltipDemo').removeClass('d-none');
+            }
             $(".ui-theme-settings").toggleClass("settings-open");
-            $(".btn-open-options").toggleClass("d-none");
         });
+
             $(".close-sidebar-btn").click(function () {
                 var t = $(this).attr("data-class");
                 $(".app-container").toggleClass(t);
@@ -108,14 +113,16 @@
             });
             $(".switch-container-class").on("click", function () {
                 var t = $(this).attr("data-class");
-                $(".app-container").toggleClass(t), $(this).parent().find(".switch-container-class").removeClass
-                ("active"), $(this).addClass("active")
+                $(".app-container").toggleClass(t)
+                    $(this).parent().find(".switch-container-class").removeClass
+                ("active")
+                    $(this).addClass("active")
             });
             $(".switch-theme-class").on("click", function () {
             var t = $(this).attr("data-class");
-            "body-tabs-line" == t && ($(".app-container").removeClass("body-tabs-shadow"), $(".app-container")
-                .addClass(t)), "body-tabs-shadow" == t && ($(".app-container").removeClass("body-tabs-line"), $("" +
-                ".app-container").addClass(t)), $(this).parent().find(".switch-theme-class").removeClass("active"), $
+            "body-tabs-line" == t && ($(".app-container").removeClass("body-tabs-shadow"),
+                $(".app-container").addClass(t)), "body-tabs-shadow" == t && ($(".app-container").removeClass("body-tabs-line"),
+                $("" + ".app-container").addClass(t)), $(this).parent().find(".switch-theme-class").removeClass("active"), $
             (this).addClass("active")
         });
             $(".switch-header-cs-class").on("click", function () {

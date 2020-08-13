@@ -269,17 +269,6 @@
 
         <script type="text/javascript">
             $(document).ready(function () {
-                // // Boton toggler editar
-                // $('#editar').click(function () {
-                //     if ($('.form-control-plaintext').hasClass('form-control-plaintext')) {
-                //         $('#editar').html('Guardar');
-                //         $('.form-control-plaintext').removeAttr('readonly').addClass('form-control').removeClass('form-control-plaintext');
-                //     } else {
-                //         $('#editar').html('Editar');
-                //         $('.form-control').attr('readonly', true).addClass('form-control-plaintext').removeClass('form-control');
-                //     }
-                // })
-
                 //START THE ODONTOGRAM
                 const odontogram = new Odontogram();
 

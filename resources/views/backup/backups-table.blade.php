@@ -1,5 +1,5 @@
 @if (count($backups))
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered table-sm">
         <thead class="thead-dark">
         <tr>
             <th>Nombre del archivo</th>
@@ -15,8 +15,8 @@
                 <td>{{ $backup['file_name'] }}</td>
                 <td>{{ $backup['file_size'] }}</td>
                 <td>
-                    {{ date('d/M/Y, g:ia', strtotime($backup['last_modified']))." ".diff_date_for_humans
-                    ($backup['last_modified']) }}
+                    {{ date('d/M/Y, g:ia', strtotime($backup['last_modified']))}} <small>({{diff_date_for_humans
+                    ($backup['last_modified']) }})</small>
                 </td>
 
                 <td class="text-right">

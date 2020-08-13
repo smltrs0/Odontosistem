@@ -1,5 +1,5 @@
 <!--Menu de configuración-->
-<div class="ui-theme-settings">
+<div class="ui-theme-settings" id="menu-config">
     <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning d-none">
         <i class="fa fa-arrow-right fa-w-16 fa-2x text-white"></i>
     </button>

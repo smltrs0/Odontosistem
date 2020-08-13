@@ -1,0 +1,30 @@
+.card{
+    box-shadow: -0.46875rem 0 2.1875rem rgba(4, 9, 20, 0.03), -0.9375rem 0 1.40625rem rgba(4, 9, 20, 0.03), -0.25rem 0 0.53125rem rgba(4, 9, 20, 0.05), -0.125rem 0 0.1875rem rgba(4, 9, 20, 0.03);
+}
+
+.card-header{
+    background-color: #ffffff; !important;
+}
+
+.card{
+    border: 0px solid rgba(0,0,0,.125);
+}
+label{
+    font-weight: bold;
+}
+.nav-pills .nav-link.active {
+
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    display: inline-block;
+    font-size: 1em;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #0048ff;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: unset;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 8px rgb(0, 55, 255);
+}

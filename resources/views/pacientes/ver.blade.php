@@ -1187,6 +1187,7 @@ $mysql_result = [
         $('select').prop('disabled', 'disabled');
 
         $(document).ready(function () {
+            console.log('documento cargado')
 
             //START THE ODONTOGRAM
             const odontogram = new Odontogram();
@@ -1214,6 +1215,5 @@ $mysql_result = [
 @section('odontograma')
     <!--Odontograma-->
         <link href="{{ asset('css/odontogram.css') }}" rel="stylesheet"/>
-        <script type="text/javascript" src="{{ asset('assets/scripts/odontograma/vendor.bundle.base.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('assets/scripts/odontograma/odontogram.js') }}"></script>
-</div>@endsection
+</div>
+@endsection
