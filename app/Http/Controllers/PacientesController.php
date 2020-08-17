@@ -48,11 +48,15 @@ class PacientesController extends Controller
 
     public function show(Pacientes $paciente)
     {
+
         return view('pacientes.ver', compact('paciente'));
     }
 
     public function edit(Pacientes $paciente)
     {
+        if (!$paciente){
+            $paciente = new Pacientes();
+        }
         return view('pacientes.editar', compact('paciente'));
     }
 

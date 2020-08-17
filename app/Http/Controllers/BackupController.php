@@ -17,6 +17,7 @@ class BackupController extends Controller
 
     public function index()
     {
+
         $disk = Storage::disk(config('backup.backup.destination.disks')[0]);
         $files = $disk->files(config('backup.backup.name'));
         $backups = [];
@@ -42,7 +43,7 @@ class BackupController extends Controller
             // log the results
             Log::info("Backpack\BackupManager -- new backup started from admin interface \r\n" . $output);
             // return the results as a response to the ajax call
-            return redirect()->back()->with('alert', 'Respaldo realizado exitosamente');
+            return redirect()->back()->with('success', 'Respaldo realizado exitosamente');
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }
@@ -74,7 +75,7 @@ class BackupController extends Controller
         $disk = Storage::disk(config('backup.backup.destination.disks')[0]);
         if ($disk->exists(config('backup.backup.name') . '/' . $file_name)) {
             $disk->delete(config('backup.backup.name') . '/' . $file_name);
-            return redirect()->back();
+            return redirect()->back()->with('success', 'Respaldo eliminado exitosamente');
         } else {
             abort(404);
         }

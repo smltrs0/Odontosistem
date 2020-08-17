@@ -4,7 +4,8 @@
         <div class="logo-src"></div>
         <div class="header__pane ml-auto">
             <div>
-                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                        data-class="closed-sidebar">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                     </span>
@@ -52,7 +53,7 @@
                         <li>
                             <a href="{{route('citas-hoy.index')}}">
                                 <i class="metismenu-icon"></i>
-                                Citas para hoy (Admin)
+                                Citas (Admin)
                             </a>
                         </li>
                         <li>
@@ -71,13 +72,13 @@
                     </a>
                     <ul>
                         <li>
-                        <a href="{{route('pacientes.create')}}">
+                            <a href="{{route('pacientes.create')}}">
                                 <i class="metismenu-icon"></i>
                                 Agregar nuevo paciente
                             </a>
                         </li>
                         <li>
-                        <a href="{{route('pacientes.index')}}">
+                            <a href="{{route('pacientes.index')}}">
                                 <i class="metismenu-icon">
                                 </i>Ver todos los pacientes
                             </a>
@@ -134,7 +135,7 @@
                     </ul>
                 </li>
                 <li>
-                <a href="{{route('finanzas')}}">
+                    <a href="{{route('finanzas')}}">
                         <i class="metismenu-icon pe-7s-cash"></i>
                         Control financiero
                     </a>

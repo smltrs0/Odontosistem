@@ -11,7 +11,7 @@
                     @csrf
                     <input type="text" name="registered_by" value="{{Auth::user()->id}}" hidden>
                     @include('pacientes.__formulario')
-                    <button class="btn btn-primary">Cear nuevo paciente</button>
+                    <button class="btn btn-primary" name="crear-paciente">Cear nuevo paciente</button>
                 </form>
             </div>
         </div>

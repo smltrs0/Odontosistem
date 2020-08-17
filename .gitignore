@@ -16,5 +16,4 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
-.idea/inspectionProfiles/Project_Default.xml
-.idea/workspace.xml
+/.idea*

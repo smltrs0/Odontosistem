@@ -1,22 +1,16 @@
 "use strict";
 
-
 class Odontogram {
-    // static showsPrimaryProcedures = false;
     constructor(initialConfig) {
-
         this._procedures = [];
         this._config = [];
         let odontogram = this;
-
-        // Mark the side of the tooth on click
         $('.tooth .side').click(function (event) {
             event.preventDefault();
             event.stopPropagation();
             markSide($(this));
         });
 
-        // Mark the entire tooth on click
         $('.tooth').click(function (event) {
             event.preventDefault();
             markTooth($(this));

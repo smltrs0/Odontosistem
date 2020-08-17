@@ -6,7 +6,7 @@
     <script src="https://unpkg.com/fullcalendar@5.1.0/locales-all.js"></script>
 <div class="mb-3">
         <div class="card">
-            <div class="card-header">Citas</div>
+            <div class="card-header">Citas para hoy</div>
                 <div class="card-body">
                   <ul class="list-group">
 
