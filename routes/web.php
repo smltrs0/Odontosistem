@@ -16,9 +16,7 @@ Auth::routes();
 
 Route::resource('/mi-cuenta', 'MyAcountController');
 
-
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 Route::resource('/pacientes', 'PacientesController');
 
@@ -38,13 +36,13 @@ Route::get('backup/delete/{file_name}', 'BackupController@delete');
 
 // Solo vistas
 Route::resource('/citas-hoy','AdminCitasController');
+
 Route::get('pagos-pacientes',function (){
    return view('finanzas.EstadoPagosPacientes');
 });
 Route::get('finanzas', function () {
     return view('finanzas.finanzas');
 })->name('finanzas');
-
 
 // Ruta para crear PDF de ejemplo
 Route::get('generate-pdf','PDFController@generatePDF');

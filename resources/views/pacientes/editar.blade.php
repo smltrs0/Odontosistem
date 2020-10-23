@@ -234,7 +234,7 @@ $mysql_result = [
 
 
     <!-- Modal -->
-    <div class="modal fade" id="evaluacionModal" role="dialog" data-backdrop="false">
+    <div class="modal fade" id="evaluacionModal" role="dialog" >
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">

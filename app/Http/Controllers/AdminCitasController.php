@@ -18,7 +18,7 @@ class AdminCitasController extends Controller
     {
         Gate::authorize('haveaccess','citas.view');
 
-        $citas= Citas::all();
+        $citas= DB::table('citas')->paginate(15);
         return view('calendar.index', compact('citas'));
     }
 

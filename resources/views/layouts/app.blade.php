@@ -43,7 +43,7 @@
     </div>
 </div>
 </body>
-{{--<script type="text/javascript" src="{{ asset('./assets/scripts/main.js') }}"></script>--}}
+<script type="text/javascript" src="{{ asset('./assets/scripts/main.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/metismenu"></script>
 

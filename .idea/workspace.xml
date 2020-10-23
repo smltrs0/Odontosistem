@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298f4cb9-3c52-47f8-9c41-2626d41b84ac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Odontosistem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Odontosistem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminCitasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminCitasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MyAcountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MyAcountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/scripts/odontograma/odontogram.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/scripts/odontograma/odontogram.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/calendar/citas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/calendar/citas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu-header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pacientes/editar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pacientes/editar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/alerts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/alerts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,11 +173,13 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laravel-vue" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
+    <property name="settings.editor.selected.configurable" value="de.espend.idea.laravel.ui.TemplateSettingsForm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="npm.build">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -170,12 +187,7 @@
       <method v="2" />
     </configuration>
     <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 7.2" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" coverage_engine="PHPDBG" directory="$PROJECT_DIR$/tests" />
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/tests" />
       <method v="2" />
     </configuration>
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -200,13 +212,16 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
         <item itemvalue="PHPUnit.tests" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="298f4cb9-3c52-47f8-9c41-2626d41b84ac" name="Default Changelist" comment="" />
@@ -224,6 +239,19 @@
       <workItem from="1597890046632" duration="221000" />
       <workItem from="1598012271291" duration="2208000" />
       <workItem from="1598392596445" duration="2454000" />
+      <workItem from="1598487275161" duration="19000" />
+      <workItem from="1599309454249" duration="1236000" />
+      <workItem from="1599311236418" duration="1882000" />
+      <workItem from="1599344332368" duration="968000" />
+      <workItem from="1599508338143" duration="148000" />
+      <workItem from="1599508521405" duration="1352000" />
+      <workItem from="1599866042468" duration="1401000" />
+      <workItem from="1600114833954" duration="42000" />
+      <workItem from="1600114913165" duration="21000" />
+      <workItem from="1601773410855" duration="592000" />
+      <workItem from="1601774178457" duration="15506000" />
+      <workItem from="1601934160802" duration="98000" />
+      <workItem from="1603493688704" duration="397000" />
     </task>
     <servers />
   </component>
@@ -247,10 +275,11 @@
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="511" y="6" key="EnvironmentVariablesDialog/0.0.1280.690@0.0.1280.690" timestamp="1597425570535" />
-    <state x="420" y="98" key="FileChooserDialogImpl" timestamp="1597890248972">
-      <screen x="0" y="0" width="1280" height="690" />
+    <state x="420" y="97" key="FileChooserDialogImpl" timestamp="1601934263504">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="420" y="98" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1597890248972" />
+    <state x="420" y="97" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1601934263504" />
+    <state x="420" y="98" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1598487301774" />
     <state width="1236" height="566" key="GridCell.Tab.0.bottom" timestamp="1597612304997">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
@@ -271,9 +300,10 @@
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="409" y="70" key="NewPhpClassDialog/0.0.1280.690@0.0.1280.690" timestamp="1597442699852" />
-    <state x="141" y="0" key="SettingsEditor" timestamp="1597890138902">
-      <screen x="0" y="0" width="1280" height="690" />
+    <state x="162" y="0" key="SettingsEditor" timestamp="1599509265946">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="162" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1599509265946" />
     <state x="141" y="0" key="SettingsEditor/0.0.1280.690@0.0.1280.690" timestamp="1597890138902" />
     <state x="357" y="152" key="jetbrains.nodejs.interpreters-dialog" timestamp="1597890249969">
       <screen x="0" y="0" width="1280" height="690" />

@@ -1,26 +1,7 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Odontosistem') }}</title>
-    <link href="{{ asset('css/base.css') }}" rel="stylesheet">
 
-</head>
-<body >
-    <div>
-        <!--Menu fixed top-->
-        <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-            @include('layouts.menu-header')
-            @auth
-            @include('layouts.boton-config')
-            <div class="app-main">
-                @endauth
-                <div class="app-main__outer">
-                    <div class="app-main__inner">
-                        {{-- @include('partials.alerts') --}}
+@extends('layouts.app')
+
+@section('content')
                         <div class="container mt-5">
                             <div class="row justify-content-center">
                                 <div class="col-md-8">
@@ -91,12 +72,4 @@
                             </div>
                         </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-<script type="text/javascript" src="{{ asset('./assets/scripts/main.js') }}"></script>
-</html>
-
+@endsection

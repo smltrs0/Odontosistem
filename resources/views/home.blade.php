@@ -106,7 +106,7 @@
 <div class="card card-shadow-primary mb-5">
 
     <div class="card-body">
-
+        @if(count($citas)>0)
         <div id="pacientes" class="list-group list-group-flush">
             <div class="d-flex justify-content-between align-items-center"> <strong>Turno</strong>  <strong> Nombre
                                                                                                                del paciente</strong>
@@ -123,6 +123,11 @@
                    badge-success">atendido</span></a>
             @endforeach
         </div>
+            @else
+            <div class="alert alert-warning text-center">
+                No se ha registrado ninguna cita para el dia de hoy
+            </div>
+        @endif
     </div>
 </div>
 

@@ -5,13 +5,13 @@ Este es un proyecto en laravel 7.
 Para poder utilizar este proyecto, debes tener los siguientes requisitos:
 
 1) debes tener la versión de PHP mayor o igual a la 7.2.5. 
-para mas información visita la documentación oficial de Laravel: https://laravel.com/docs/7.x
+para más información visita la documentación oficial de Laravel: https://laravel.com/docs/7.x
 
 2) debes tener instalado composer en tu equipo: https://getcomposer.org/
 
 3) si utilizas windows, puedes descargar el programa git desde la página oficial: https://gitforwindows.org/
 
-Si cumples con estos prerequisitos, entonces podrás instalar este proyecto.
+Si cumples con estos pre-requisitos, entonces podrás instalar este proyecto.
 
 Pasos para instalar este proyecto correctamente:
 

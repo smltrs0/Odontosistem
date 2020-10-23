@@ -41,8 +41,7 @@
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="ModalCitas" role="dialog" aria-labelledby="ModalCitaLabel"
-                 data-backdrop="false">
+            <div class="modal fade" id="ModalCitas" role="dialog" aria-labelledby="ModalCitaLabel">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">

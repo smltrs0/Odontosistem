@@ -303,7 +303,7 @@ button,
   align-items: center;
   align-content: center;
   position: relative;
-  z-index: 10;
+  /*!*z-index: 10;*!*/
   transition: all 0.2s;
 }
 .app-header.header-shadow {
@@ -365,7 +365,7 @@ button,
 }
 
 .fixed-header .app-header {
-  position: fixed;
+  position: sticky;
   width: 100%;
   top: 0;
 }
@@ -373,7 +373,7 @@ button,
   visibility: visible;
 }
 .fixed-header .app-main {
-  padding-top: 60px;
+  /*padding-top: 60px;*/
 }
 .fixed-header:not(.fixed-sidebar):not(.closed-sidebar) .app-sidebar .app-header__logo {
   visibility: hidden;
@@ -453,7 +453,7 @@ button,
   background: rgba(255, 255, 255, 0.8);
 }
 .app-header.header-text-light .app-header__logo .logo-src {
-  background: url("utils/images/logo.png");
+  background: url("../assets/images/logo.png");
 }
 .app-header.header-text-light .app-header__mobile-menu .hamburger-inner,
 .app-header.header-text-light .app-header__mobile-menu .hamburger-inner::before,
@@ -532,26 +532,26 @@ button,
   background: rgba(0, 0, 0, 0.8);
 }
 .app-header.header-text-dark .app-header__logo .logo-src {
-  background: url("utils/images/logo-inverse.png");
+  background: url('../assets/images/logo-inverse.png');
 }
 
 .app-sidebar {
   width: 280px;
   display: flex;
-  z-index: 11;
+  /*z-index: 11;*/
   overflow: hidden;
   min-width: 280px;
   position: relative;
   flex: 0 0 280px;
-  margin-top: -60px;
-  padding-top: 60px;
+  /*margin-top: -60px;*/
+  /*padding-top: 60px;*/
   transition: all 0.2s;
 }
 .app-sidebar .app-sidebar__inner {
   padding: 2px 1.5rem 1.5rem;
 }
 .app-sidebar .scrollbar-sidebar {
-  z-index: 15;
+  /*z-index: 15;*/
   width: 100%;
 }
 .app-sidebar .app-sidebar-bg {
@@ -562,14 +562,14 @@ button,
   width: 100%;
   opacity: 0.05;
   background-size: cover;
-  z-index: 10;
+  /*z-index: 10;*/
 }
 .app-sidebar .app-header__logo {
   position: absolute;
   left: 0;
   top: 0;
   display: none;
-  z-index: 11;
+  /*z-index: 11;*/
 }
 .app-sidebar.sidebar-shadow {
   box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
@@ -594,7 +594,7 @@ button,
   opacity: 0.6;
   left: 0;
   top: 0;
-  z-index: 12;
+  /*z-index: 12;*/
 }
 
 .vertical-nav-menu {
@@ -770,7 +770,7 @@ button,
   background: rgba(255, 255, 255, 0.2);
 }
 .app-sidebar.sidebar-text-light .app-header__logo .logo-src {
-  background: url("utils/images/logo.png");
+  background: url("../assets/images/logo.png");
 }
 .app-sidebar.sidebar-text-light .app-header__logo .hamburger-inner,
 .app-sidebar.sidebar-text-light .app-header__logo .hamburger-inner::before,
@@ -840,7 +840,7 @@ button,
   height: 100vh;
 }
 .fixed-sidebar .app-main .app-main__outer {
-  z-index: 9;
+  /*z-index: 9;*/
   padding-left: 280px;
 }
 .fixed-sidebar.fixed-header .app-sidebar .app-header__logo {
@@ -1008,14 +1008,14 @@ button,
 .app-main {
   flex: 1;
   display: flex;
-  z-index: 8;
+  /*z-index: 8;*/
   position: relative;
 }
 .app-main .app-main__outer {
   flex: 1;
   flex-direction: column;
   display: flex;
-  z-index: 12;
+  /*z-index: 12;*/
 }
 .app-main .app-main__inner {
   padding: 30px 30px 0;
@@ -1063,7 +1063,7 @@ button,
   width: 100%;
   bottom: 0;
   left: 0;
-  z-index: 7;
+  /*z-index: 7;*/
 }
 .fixed-footer .app-footer .app-footer__inner {
   margin-left: 280px;
@@ -1185,7 +1185,7 @@ button,
   padding: 0;
   outline: none;
   position: relative;
-  z-index: 2;
+  /*z-index: 2;*/
   float: right;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -1223,7 +1223,7 @@ button,
 }
 .search-wrapper .close {
   position: absolute;
-  z-index: 1;
+  /*z-index: 1;*/
   top: 50%;
   left: 0;
   width: 20px;
@@ -1460,7 +1460,6 @@ button,
 .icon-gradient {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
   text-fill-color: transparent;
 }
 
@@ -1514,10 +1513,10 @@ button,
 
 .fsize-4 {
   font-size: 2rem !important;
-}
 
-.z-index-6 {
-  z-index: 6;
+
+/*.z-index-6 {*/
+/*  z-index: 6;*/
 }
 
 .line-height-1 {
@@ -1543,7 +1542,7 @@ button,
 }
 
 .list-group-item:hover {
-  z-index: initial;
+  /*z-index: initial;*/
 }
 
 .no-results {
@@ -2052,7 +2051,7 @@ button,
   .popover,
 .dropdown-menu {
     position: fixed !important;
-    z-index: 50;
+    /*z-index: 50;*/
     left: 5% !important;
     top: 50% !important;
     width: 90% !important;
@@ -2262,7 +2261,7 @@ body .card.mb-3 {
 }
 .ui-theme-settings {
   position: fixed;
-  z-index: 155;
+  z-index: 9999;
   right: -30px;
   top: 0;
   height: 100vh;

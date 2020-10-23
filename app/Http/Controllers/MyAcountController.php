@@ -18,7 +18,13 @@ class MyAcountController extends Controller
         return view('auth.acount', compact('paciente'));
     }
 
-    public function update(Request $request,  $paciente){
+    /**
+     * @param Request $request
+     * @param $paciente
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    
+    public function update(Request $request, $paciente){
 
             $request->validate([
             'name' => 'required',
