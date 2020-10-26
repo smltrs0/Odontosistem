@@ -9,7 +9,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/base.css') }}" rel="stylesheet">
 
-
+    <!--Odontograma-->
+<link href="{{ asset('css/odontogram.css') }}" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/eba26df4c2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
@@ -44,7 +45,7 @@
 </div>
 </body>
 <script type="text/javascript" src="{{ asset('./assets/scripts/main.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+{{--<script src="https://cdn.jsdelivr.net/npm/jquery"></script>--}}
 <script src="https://cdn.jsdelivr.net/npm/metismenu"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"

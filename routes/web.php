@@ -1,9 +1,13 @@
 <?php
 
+use App\Permission\Models\Role;
+use App\procedure;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 //use App\Permission\Models\Role;
 //use App\Permission\Models\Permission;
 //use Illuminate\Support\Facades\Gate;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,6 +25,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/pacientes', 'PacientesController');
 
 Route::resource('/role', 'RoleController')->names('role');
+
+Route::resource('/procedures', 'procedureController')->names('procedimientos');
 
 Route::resource('/user', 'UserController', ['except' => [
     'create', 'store'
@@ -40,6 +46,7 @@ Route::resource('/citas-hoy','AdminCitasController');
 Route::get('pagos-pacientes',function (){
    return view('finanzas.EstadoPagosPacientes');
 });
+
 Route::get('finanzas', function () {
     return view('finanzas.finanzas');
 })->name('finanzas');
@@ -48,10 +55,9 @@ Route::get('finanzas', function () {
 Route::get('generate-pdf','PDFController@generatePDF');
 
 Route::get('test', function(){
-    $paciente =DB::table('pacientes')
-        ->rightJoin('citas', 'pacientes.id', '=', 'citas.paciente_id')
-        ->get();
-   dd($paciente);
+    $procedures = procedure::find(50);
+   
+   dd($procedures);
 });
 
 

@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="298f4cb9-3c52-47f8-9c41-2626d41b84ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Odontosistem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Odontosistem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+    <list default="true" id="298f4cb9-3c52-47f8-9c41-2626d41b84ac" name="Default Changelist" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminCitasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminCitasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MyAcountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MyAcountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/scripts/odontograma/odontogram.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/scripts/odontograma/odontogram.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/calendar/citas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/calendar/citas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PDFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PDFController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu-header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pacientes/editar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pacientes/editar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/alerts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/alerts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pacientes/ver.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pacientes/ver.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -251,12 +240,16 @@
       <workItem from="1601773410855" duration="592000" />
       <workItem from="1601774178457" duration="15506000" />
       <workItem from="1601934160802" duration="98000" />
-      <workItem from="1603493688704" duration="397000" />
+      <workItem from="1603493688704" duration="9754000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="227" y="0" key="#CLI_Interpreters" timestamp="1597425685230">
@@ -271,6 +264,10 @@
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="365" y="0" key="#PHP/0.0.1280.690@0.0.1280.690" timestamp="1597425656653" />
+    <state x="263" y="0" key="CommitChangelistDialog2" timestamp="1603494488548">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="263" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1603494488548" />
     <state x="511" y="6" key="EnvironmentVariablesDialog" timestamp="1597425570535">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
@@ -313,5 +310,9 @@
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="296" y="147" key="run.anything.popup/0.0.1280.690@0.0.1280.690" timestamp="1597152115574" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1603506542968">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1603506542968" />
   </component>
 </project>

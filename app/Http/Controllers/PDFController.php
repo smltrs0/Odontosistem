@@ -11,7 +11,7 @@ class PDFController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function generatePDF($request)
+    public function generatePDF($request='')
     {
         $data = ['title' => 'Titulo para el pdf de ejemplo'];
         $pdf = PDF::loadView('myPDF', $data);

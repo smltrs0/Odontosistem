@@ -600,8 +600,3 @@ $mysql_result = [
 
 @endsection
 
-@section('odontograma')
-    <!--Odontograma-->
-        <link href="{{ asset('css/odontogram.css') }}" rel="stylesheet"/>
-</div>
-@endsection
