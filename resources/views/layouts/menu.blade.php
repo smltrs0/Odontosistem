@@ -105,13 +105,46 @@
                                 </i>Ver todos los usuarios
                             </a>
                         </li>
+                        <li>
+                            <a href="{{route('role.index')}}">
+                                <i class="metismenu-icon pe-7s-key"></i>
+                                Administrar roles
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="{{route('role.index')}}">
-                        <i class="metismenu-icon pe-7s-key"></i>
-                        Administrar roles
+                    <a href="{{route('finanzas')}}">
+                        <i class="metismenu-icon pe-7s-graph2"></i>
+                        Estadisticas de pacientes
                     </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-cash"></i>
+                        Control financiero
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('procedures.index') }}">
+                                <i class="metismenu-icon">
+                                </i>Procedimientos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('user.index')}}">
+                                <i class="metismenu-icon">
+                                </i>Estadisticas de pacientes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('pagos') }}">
+                                <i class="metismenu-icon">
+                                </i>Pagos
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#">
@@ -133,12 +166,6 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="{{route('finanzas')}}">
-                        <i class="metismenu-icon pe-7s-cash"></i>
-                        Control financiero
-                    </a>
                 </li>
             </ul>
         </div>

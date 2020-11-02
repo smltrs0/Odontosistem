@@ -70,9 +70,10 @@ class procedureController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(procedure $procedure)
     {
-        //
+        $procedimiento = $procedure;
+        return \view('procedures.actualizar', \compact('procedimiento'));
     }
 
     /**
@@ -82,9 +83,18 @@ class procedureController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,procedure $procedure)
     {
-        //
+       $procedure->key_p = $request->key_p;
+       $procedure->title = $request->title;
+       $procedure->code= $request->code;
+       $procedure->price = $request->price;
+       $procedure->className = $request->className;
+       $procedure->type = $request->type;
+       $procedure->apply = $request->apply;
+       $procedure->ClearBefore = $request->ClearBefore;
+       $procedure->save();
+
     }
 
     /**

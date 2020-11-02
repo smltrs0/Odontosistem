@@ -26,7 +26,7 @@ Route::resource('/pacientes', 'PacientesController');
 
 Route::resource('/role', 'RoleController')->names('role');
 
-Route::resource('/procedures', 'procedureController')->names('procedimientos');
+Route::resource('/procedures', 'procedureController');
 
 Route::resource('/user', 'UserController', ['except' => [
     'create', 'store'
@@ -43,9 +43,9 @@ Route::get('backup/delete/{file_name}', 'BackupController@delete');
 // Solo vistas
 Route::resource('/citas-hoy','AdminCitasController');
 
-Route::get('pagos-pacientes',function (){
-   return view('finanzas.EstadoPagosPacientes');
-});
+Route::get('pagos',function (){
+   return view('finanzas.EstadoPagos');
+})->name('pagos');
 
 Route::get('finanzas', function () {
     return view('finanzas.finanzas');
