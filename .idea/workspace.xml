@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298f4cb9-3c52-47f8-9c41-2626d41b84ac" name="Default Changelist" comment="update">
-      <change afterPath="$PROJECT_DIR$/resources/views/pacientes/odontogram.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Citas.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Citas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PacientesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PacientesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/procedureController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/procedureController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Pacientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pacientes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/finanzas/EstadoPagos.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/boton-config.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/boton-config.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu-header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pacientes/__odontogram.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pacientes/editar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pacientes/editar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pacientes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pacientes/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pacientes/ver.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pacientes/ver.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/procedures/actualizar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/procedures/actualizar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/procedures/crear.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/procedures/crear.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/procedures/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/procedures/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,6 +238,7 @@
       <workItem from="1603493688704" duration="9754000" />
       <workItem from="1603725921796" duration="44000" />
       <workItem from="1604887447814" duration="8500000" />
+      <workItem from="1605528597782" duration="992000" />
     </task>
     <servers />
   </component>
