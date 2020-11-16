@@ -17,8 +17,8 @@ class AdminCitasController extends Controller
     public function index()
     {
         Gate::authorize('haveaccess','citas.view');
+        $citas = Citas::paginate(15);
 
-        $citas= DB::table('citas')->paginate(15);
         return view('calendar.index', compact('citas'));
     }
 

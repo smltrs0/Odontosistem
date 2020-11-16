@@ -7,7 +7,8 @@
             <div class="card-body">
                     <table class="table">
                         <tr>
-                                <th width="50%">Nombre</th>
+                                <th width="">Nombre</th>
+                                <th> Fecha</th>
                                 <th width="30%">Estado</th>
                                 <th width="20%">accion</th>
                             </tr>
@@ -15,11 +16,19 @@
 
                             @foreach($citas as $cita)
                             <tr>
+                                <td>{{ Str::ucfirst( $cita->paciente->name)." ".Str::ucfirst($cita->paciente->last_name) }}</td>
                                 <td>
                                    {{ $fechaCita = date( 'd-m-Y' ,strtotime($cita->fecha)) }}
                                 </td>
                                 <td>
+                                    @if ($cita->atendido)
                                     <a href="#" title="Ver cita cita">Atendido </a>
+                                    @endif
+                                    @if ($cita->asistencia_confirmada)
+                                    <span class="badge badge-primary">
+                                        Asistencia confirmada
+                                    </span>
+                                    @endif
                                     @if(date('d-m-Y',strtotime(now())) == $fechaCita)
                                         <span class="badge badge-primary">
                                             Hoy

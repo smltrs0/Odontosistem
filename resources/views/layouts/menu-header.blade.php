@@ -46,7 +46,9 @@
         </div>
         @endauth
         <!--Final Header busqueda-->
-
+        <div style="margin-left:50vh" class="text-muted">
+            <p class="content-center" id="dolar"></p>
+        </div>
         <div class="app-header-right">
             <div class="header-btn-lg pr-0">
                 <div class="widget-content p-0">
@@ -95,6 +97,7 @@
                             </div>
                         </div>
                         @auth()
+                        
                         <div class="widget-content-left  ml-3 header-user-info">
                             <div class="widget-heading">
                                 {{ Auth::user()->name }}

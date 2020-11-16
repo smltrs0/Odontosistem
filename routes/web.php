@@ -24,6 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/pacientes', 'PacientesController');
 
+Route::get('paciente/{id}/odontograma', 'PacientesController@viewOdontograma');
+
 Route::resource('/role', 'RoleController')->names('role');
 
 Route::resource('/procedures', 'procedureController');
@@ -31,6 +33,8 @@ Route::resource('/procedures', 'procedureController');
 Route::resource('/user', 'UserController', ['except' => [
     'create', 'store'
 ]])->names('user');
+
+Route::resource('/citas-hoy','AdminCitasController');
 
 Route::resource('citas', 'CitasController');
 
@@ -41,22 +45,36 @@ Route::get('backup/download/{file_name}', 'BackupController@download');
 Route::get('backup/delete/{file_name}', 'BackupController@delete');
 
 // Solo vistas
-Route::resource('/citas-hoy','AdminCitasController');
 
-Route::get('pagos',function (){
-   return view('finanzas.EstadoPagos');
-})->name('pagos');
 
-Route::get('finanzas', function () {
+Route::get('/citas-medicas/{id}', function () {
+    return view('citas-medicas.citas_medicas');
+});
+
+Route::get('/nueva-cita', function () {
+    return view('citas-medicas.nueva_cita');
+});
+
+Route::resource('pagos', 'AbonosController')->names('pagos');
+
+Route::get('registrar-pago',function (){
+    return view('finanzas.RegistrarPago');
+ })->name('registrar-pago');
+
+Route::get('estadisticas-pacientes', function () {
     return view('finanzas.finanzas');
-})->name('finanzas');
+})->name('estadisticas-pacientes');
+
+Route::get('facturas', function () {
+    return view('facturas.facturas');
+})->name('facturas');
 
 // Ruta para crear PDF de ejemplo
 Route::get('generate-pdf','PDFController@generatePDF');
 
 Route::get('test', function(){
     $procedures = procedure::find(50);
-   
+
    dd($procedures);
 });
 

@@ -48,6 +48,9 @@
                                 </div>
                             </div>
                         </li>
+                        <li class="list-group-item"> 
+                            <button onclick="toggleDollar()">Mostrar dolar</button>
+                        </li>
                         <!-- <li class="list-group-item">
                             <div class="widget-content p-0">
                                 <div class="widget-content-wrapper">

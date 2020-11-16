@@ -6,7 +6,7 @@
             <div class="card-body">
                <form method="POST" action="{{  route('procedures.update', $procedimiento->id) }}">
                 @csrf
-                @method('PATCH') 
+                @method('put') 
 
                    <div class="form-group">
                        <label for="">Nombre</label>

@@ -23,11 +23,15 @@ class Pacientes extends Model
         'antecedentes',
         'alergias',
         'habitos',
-        'motivo-consulta',
+        'motivoConsulta',
         'registered_by',
+        'medical_history',
         'sex',
         'user_id',
         'email',
+        'coagulacion',
+        'embarazo',
+        'anestesicos'
                 ];
 
     public function user()

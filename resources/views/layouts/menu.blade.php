@@ -37,14 +37,15 @@
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Inicio</li>
                 <li>
-                    <a href="{{route('home')}}" class="mm-active">
+                    <a href="{{route('home')}}"  class="{{ (request()->routeIs('home*')) ? 'mm-active' : '' }}">
                         <i class="metismenu-icon pe-7s-home"></i>
                         Pagina principal
                     </a>
                 </li>
                 <li class="app-sidebar__heading">Agenda</li>
                 <li>
-                    <a href="#">
+                   
+                    <a href="#"   class="{{ (request()->routeIs('citas*')) ? 'mm-active' : '' }}">
                         <i class="metismenu-icon pe-7s-date"></i>
                         Citas
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
@@ -65,7 +66,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#"  class="{{ (request()->routeIs('pacientes*')) ? 'mm-active' : '' }}">
                         <i class="metismenu-icon fa fa-user-injured"></i>
                         Pacientes
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
@@ -87,7 +88,7 @@
                 </li>
                 <li class="app-sidebar__heading">Administrador</li>
                 <li>
-                    <a href="#">
+                    <a href="#"  class="{{ (request()->routeIs('user*')) ? 'mm-active' : '' }}">
                         <i class="metismenu-icon fa fa-users"></i>
                         Administrar usuarios
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
@@ -114,12 +115,6 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{route('finanzas')}}">
-                        <i class="metismenu-icon pe-7s-graph2"></i>
-                        Estadisticas de pacientes
-                    </a>
-                </li>
-                <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-cash"></i>
                         Control financiero
@@ -133,15 +128,21 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('user.index')}}">
+                            <a href="{{route('estadisticas-pacientes')}}">
                                 <i class="metismenu-icon">
                                 </i>Estadisticas de pacientes
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('pagos') }}">
+                            <a href="{{ route('pagos.index') }}">
                                 <i class="metismenu-icon">
-                                </i>Pagos
+                                </i>Cuentas por cobrar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('registrar-pago') }}">
+                                <i class="metismenu-icon">
+                                </i>Registrar pago
                             </a>
                         </li>
                     </ul>
@@ -166,6 +167,12 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li>
+                    <a href="{{route('facturas')}}"  class="{{ (request()->routeIs('facturas*')) ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-news-paper"></i>
+                        Facturas
+                    </a>
                 </li>
             </ul>
         </div>

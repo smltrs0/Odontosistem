@@ -41,11 +41,14 @@ class procedureController extends Controller
     {
         $request->validate([
             'title'=> 'required',
-            'className'=>'required'
+            'price'=> 'required',
         ]);
          
         $procedimiento= new procedure([
-            ''=> $request->title,
+            'title'=> $request->title,
+            'price'=> $request->price,
+            'code'=> $request->code,
+            'className'=> $request->className,
             
         ]);
         $procedimiento->save();
@@ -95,6 +98,8 @@ class procedureController extends Controller
        $procedure->ClearBefore = $request->ClearBefore;
        $procedure->save();
 
+       return \redirect('procedures')->with('success', 'Se ha actualizado correctamente');
+
     }
 
     /**
@@ -107,6 +112,7 @@ class procedureController extends Controller
     {
         procedure::destroy($id);
         return \redirect('procedures')->with('success', 'Se ha eliminado correctamente');
+
        
     }
 }

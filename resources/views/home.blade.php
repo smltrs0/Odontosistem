@@ -118,9 +118,14 @@
                    href="{{route('pacientes.show', $cita->id_paciente)}}"> {{$contador++.".º"}} <div>{{ucfirst
                    ($cita->name)." "
                    .ucfirst($cita->last_name)}}</div>
-                    <span
-                        class="badge badge-pill
-                   badge-success">atendido</span></a>
+                    @if($cita->atendido)
+                        <span class="badge badge-pill
+                   badge-success">atendido</span>
+                    @else
+                        <span class="badge badge-pill
+                   badge-warning text-white">pendiente</span>
+                    @endif
+                </a>
             @endforeach
         </div>
             @else

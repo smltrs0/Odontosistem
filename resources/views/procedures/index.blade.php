@@ -21,7 +21,7 @@
                         <td>Costo</td>
                         <td>Nombre</td>
                         <td>type</td>
-                        <td width=" 15%">Acción</td>
+                        <td width="">Acción</td>
                     </tr>
                     @foreach ($procedimientos as $procedure)
                     <tr>
@@ -31,11 +31,15 @@
                         <td>{{  $procedure->type }}</td>
                         <td> <a href="{{ route('procedures.edit',$procedure->id) }}" class="btn btn-warning btn-sm text-white">
                             <span class="fa fa-edit"></span></a> 
-                            <a href="{{ route('procedures.destroy',$procedure->id) }}" class="btn btn-sm btn-danger"><span class="fa fa-trash-alt"></span></a>
+                            {{-- <a href="{{ route('procedures.destroy',$procedure->id) }}" class="btn btn-sm btn-danger"><span class="fa fa-trash-alt"></span></a> --}}
+                            <form method="POST" action="{{ route('procedures.destroy', $procedure->id) }}">
+                               @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-sm btn-danger"><span class="fa fa-trash-alt"></span></button>
+                            </form>
                     </tr>
                     @endforeach
                 </table>
-
             </div>
             <div class="card-footer">
                 {{ $procedimientos->links() }}

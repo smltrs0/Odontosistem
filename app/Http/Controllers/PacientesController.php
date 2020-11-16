@@ -60,6 +60,10 @@ class PacientesController extends Controller
         return view('pacientes.editar', compact('paciente'));
     }
 
+    public function viewOdontograma(Pacientes $id){
+        $paciente = $id;
+        return view('pacientes.odontogram', compact('paciente'));
+    }
 
     public function update(Request $request, Pacientes $paciente)
     {
@@ -92,10 +96,16 @@ class PacientesController extends Controller
             'otros'=> $request->get('otros'),
             "embarazada" => $request->get('embarazada'),
             "coagulacion" => $request->get('coagulacion'),
+            "height"=>$request->get('height'),
+            "weight"=> $request->get('weight'),
             "anestesicos" => $request->get('anestesicos'),
-            'antecedentes' => json_encode(explode(',', $request->antecedentes)),
-            'habitos' => json_encode(explode(',', $request->habitos)),
-            'alergias'=> json_encode(explode(',', $request->alergias)),
+            'antecedentes' => $request->get('antecedentes'),
+            'habitos' =>  $request->get('habitos'),
+            'alergias'=>  $request->get('alergias'),
+            'medicamentos'=> $request->get('medicamentos'),
+            'coagulacion'=> $request->get('coagulacion'),
+            'embarazo'=> $request->get('embarazada'),
+            'anestesicos'=> $request->get('anestesicos'),
         ]);
 
         return redirect()->route('pacientes.index')->with('success', 'Datos actualizados correctamente');

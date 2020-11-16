@@ -10,7 +10,6 @@
     <link href="{{ asset('css/base.css') }}" rel="stylesheet">
 
     <!--Odontograma-->
-<link href="{{ asset('css/odontogram.css') }}" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/eba26df4c2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
@@ -141,6 +140,26 @@
             })
     })
 
+    $.getJSON("https://s3.amazonaws.com/dolartoday/data.json",function(data){
+  console.log('DTD: '+data.USD.transferencia+ ' Sicad: ' + data.USD.sicad2);
+  document.querySelector("#dolar").innerHTML='DTD: '+data.USD.transferencia+ ' Sicad: ' + data.USD.sicad2;
+    });   
+
+    document.querySelector("#dolar").title="Ultimo cierre, obtenido de DolarToday";
+  
+
+    function toggleDollar() {
+  if (document.querySelector("#dolar") == "none") {
+    document.querySelector("#dolar").style.display = "block";
+  } else {
+    document.querySelector("#dolar").style.display = "none";
+  }
+}
+
+
+function ventanaSecundaria (URL){ 
+   window.open(URL,'ventana','height=' + screen.height + ',width=' + screen.width + ',resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=yes') 
+} 
 
 </script>
 

@@ -4,27 +4,20 @@
         <div class="card">
             <div class="card-header">Crear nuevo procedimiento</div>
             <div class="card-body">
-               <form method="POST" action="{{  route('procedimientos.store') }}">
+               <form method="POST" action="{{  route('procedures.store') }}">
                 @csrf
                    <div class="form-group">
                        <label for="">Nombre</label>
                     <input class="form-control" type="text" name="title">
                    </div>
                    <div class="form-group">
-                       <label for="">Tecla</label>
-                    <input class="form-control" type="text" name="key_p">
-                   </div>
-                   <div class="form-group">
                        <label for="">Codigo</label>
                     <input class="form-control" type="text" name="code">
                    </div>
                    <div class="form-group">
-                           <label for="type">Tipo</label>
-                           <select id="type" class="form-control" name="type">
-                               <option value="pendiente">Pendiente</option>
-                               <option value="completado">Completado</option>
-                           </select>
-                   </div>
+                    <label for="">Costo</label>
+                 <input class="form-control" type="number" name="price">
+                </div>
                    <div class="form-group">
                        <label for="">Estilo a aplicar</label>
                     <input class="form-control" type="text" name="className">

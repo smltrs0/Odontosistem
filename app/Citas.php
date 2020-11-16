@@ -9,10 +9,12 @@ class Citas extends Model
     protected $fillable = [
         'fecha',
         'hora',
+        'asistencia_confirmada',
+        'atendido'
     ];
 
-    public function citas()
+    public function Paciente()
     {
-        return $this->belongsTo('App\Pacientes', 'paciente_id', 'id');
+        return $this->hasOne('App\Pacientes', 'id', 'paciente_id');
     }
 }
