@@ -74,9 +74,6 @@
       background: rgba(20,20,20,0.2);
   }
 
-  .btn{
-      background-color: #eeeeee4b;
-  }
 
 </style>
 <body>
@@ -162,7 +159,7 @@
                  <div class="carousel-caption d-none d-md-block">
                 <h3>Solicite Presupuesto</h3>
                 <h1>Beneficios Para La Salud Dental</h1>
-                <a href="#news" class="section-btn btn btn-default btn-blue smoothScroll">Ver Servicios</a>
+                <a href="#news" class="section-btn btn btn-default btn-primary smoothScroll">Ver Servicios</a>
                  </div>
               </div>
             </div>
