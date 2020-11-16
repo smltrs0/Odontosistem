@@ -70,8 +70,8 @@
   html{
     -webkit-font-smoothing: antialiased;
   }
-  .carousel-item{
-      background: rgba(20,20,20,0.2);
+  .carousel-item img{
+      filter: contrast(72%);
   }
 
 
@@ -83,10 +83,9 @@
                    <div class="col-md-4 col-sm-5">
                       <p><h3>Bienvenidos al Servicio de Odontologia del Dispensario San Francisco de Asís</h3></p>
                  </div> 
-                      
               <div class="col-md-8 col-sm-7 text-right " style="font-size: calc(0.09em + 0.9vw)">
-                      <span class="phone-icon"><i class="fa fa-phone text-success"></i> 0285-6335114</span> |
-                      <span class="date-icon"><i class="fa fa-calendar text-success"></i> 8:00 AM - 11:00 AM y 2:00 PM - 6:00 Pm  (Lunes a Viernes)</span>
+                      <span class="phone-icon"><i class="fa fa-phone text-primary"></i> 0285-6335114</span> |
+                      <span class="date-icon"><i class="fa fa-calendar-alt text-primary"></i> 8:00 AM - 11:00 AM y 2:00 PM - 6:00 Pm  (Lunes a Viernes)</span>
                  </div> 
 
             </div>
@@ -143,7 +142,7 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h3>Hagamos tu vida más feliz</h3>
                            <h1>El tiempo lo cura todo, menos las caries, visitanos</h1>
-                           <a href="#team" class="section-btn btn btn-default smoothScroll">Conoce a nuestro odontólogo</a>
+                           <a href="#team" class="section-btn btn btn-success smoothScroll">Conoce a nuestro odontólogo</a>
                       </div>
               </div>
               <div class="carousel-item" data-interval="2000">
