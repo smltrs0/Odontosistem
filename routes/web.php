@@ -46,14 +46,8 @@ Route::get('backup/delete/{file_name}', 'BackupController@delete');
 
 // Solo vistas
 
+Route::resource('citas-medicas', 'CitasMedicasController');
 
-Route::get('/citas-medicas/{id}', function () {
-    return view('citas-medicas.citas_medicas');
-});
-
-Route::get('/nueva-cita', function () {
-    return view('citas-medicas.nueva_cita');
-});
 
 Route::resource('pagos', 'AbonosController')->names('pagos');
 

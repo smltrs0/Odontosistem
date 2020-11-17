@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body style="background: #e7eaec">
         <div class="container">
             <div>
                 <div class="content-wrapper">
@@ -867,17 +867,17 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-    
-                //START THE ODONTOGRAM 
+
+                //START THE ODONTOGRAM
                 const odontogram = new Odontogram();
-    
+
                 $.ajax({
                     type: "GET",
                     url: "{{ asset('./assets/scripts/odontograma/procedures.json') }}", // Get all procedures
                     success: function(initialProcedures) {
                         odontogram.procedures = initialProcedures;
                         odontogram.config = {"event_id":11492,"name":"Samuel Trias","showsPrimary":false,"comments":"Este es un comentario de prueba desde un json","procedures":"[]"};
-    
+
                     },
                     error: function(XMLHttpRequest, textStatus, errorThrown) {
                         alert("Status: " + textStatus);

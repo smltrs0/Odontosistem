@@ -35,7 +35,7 @@
 
                                    <a class="btn btn-info" title="Ver datos del paciente" href="{{ route('pacientes.show',$paciente->id) }}"><i class="pe-7s-note2"> </i></a>
 
-                                   <a href="{{ url("citas-medicas/{$paciente->id}/") }}" class="btn btn-success" title="Ver citas medicas del paciente"><i class="pe-7s-news-paper"></i></a>
+                                   <a href="javascript:ventanaSecundaria('{{ url("citas-medicas/{$paciente->id}") }}')" class="btn btn-success" title="Ver citas medicas del paciente"><i class="pe-7s-news-paper"></i></a>
 
                                    <a class="btn btn-primary" title="Editar datos de este paciente" href="{{ route('pacientes.edit',$paciente->id) }}"><i class="fa fa-edit"></i></a>
                                    @csrf

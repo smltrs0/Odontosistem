@@ -23,7 +23,7 @@
                                                      general</a>
 
                             <a class="nav-item nav-link ml-auto" href="javascript:ventanaSecundaria('{{ url("paciente/{$paciente->id}/odontograma") }}')">Odontograma</a>
-                            <a class="nav-item nav-link nav-item " href="">Citas medicas</a>
+                            <a class="nav-item nav-link nav-item " href="javascript:ventanaSecundaria('{{ url("citas-medicas/{$paciente->id}") }}')">Citas medicas</a>
                         </div>
                     </nav>
                     <!--Final de las pestañas-->

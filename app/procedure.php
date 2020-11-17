@@ -15,6 +15,10 @@ class procedure extends Model
         'price',
         'apply',
         'clearBefore'
-        
         ];
+
+        public function citas_medicas() {
+            return $this->belongsToMany('App\citas_medicas')->withPivot('cantidad');
+        }
+
 }

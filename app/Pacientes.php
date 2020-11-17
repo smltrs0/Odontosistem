@@ -42,4 +42,9 @@ class Pacientes extends Model
     {
         return $this->hasMany('App\Citas');
     }
+
+    public function citas_medicas()
+    {
+        return $this->hasMany('App\citas_medicas');
+    }
 }
