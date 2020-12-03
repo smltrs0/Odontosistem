@@ -15,7 +15,7 @@
             <div>
                 <div class="content-wrapper">
                     <header class="text-center m-4">
-                        <h1 class="top-round-borders">Odontograma [nombre paciente]</h1>
+                        <h1 class="top-round-borders">Odontograma de {{ ucfirst($paciente->name)." ".ucfirst($paciente->last_name) }}</h1>
                     </header>
                     <form action="./index.php">
                         <div class="row">

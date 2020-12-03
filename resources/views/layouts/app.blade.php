@@ -31,7 +31,7 @@
             crossorigin="anonymous"></script>
 
 
-            
+
 </head>
 <body>
 <div>
@@ -143,10 +143,10 @@
     $.getJSON("https://s3.amazonaws.com/dolartoday/data.json",function(data){
   console.log('DTD: '+data.USD.transferencia+ ' Sicad: ' + data.USD.sicad2);
   document.querySelector("#dolar").innerHTML='DTD: '+data.USD.transferencia+ ' Sicad: ' + data.USD.sicad2;
-    });   
+    });
 
     document.querySelector("#dolar").title="Ultimo cierre, obtenido de DolarToday";
-  
+
 
     function toggleDollar() {
   if (document.querySelector("#dolar") == "none") {
@@ -157,9 +157,9 @@
 }
 
 
-function ventanaSecundaria (URL){ 
-   window.open(URL,'ventana','height=' + screen.height + ',width=' + screen.width + ',resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=yes') 
-} 
+function ventanaSecundaria (URL){
+   window.open(URL,'ventana','height=' + screen.height + ',width=' + screen.width + ',resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=yes')
+}
 
 </script>
 

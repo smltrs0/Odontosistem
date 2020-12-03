@@ -65,7 +65,8 @@
                                 @auth
                                 <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
 
-                                    <img width="42" class="rounded-circle" src="{{asset('assets/images/avatars/1.jpg')}}" alt="">
+{{--                                    <img width="42" class="rounded-circle" src="{{asset('assets/images/avatars/1.jpg')}}" alt="">--}}
+                                    <i class="fa fa-cog"></i>
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>
                                 @endauth
@@ -97,7 +98,7 @@
                             </div>
                         </div>
                         @auth()
-                        
+
                         <div class="widget-content-left  ml-3 header-user-info">
                             <div class="widget-heading">
                                 {{ Auth::user()->name }}

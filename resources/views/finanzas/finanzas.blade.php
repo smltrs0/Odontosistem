@@ -1,57 +1,57 @@
 @extends('layouts.app')
 
 @section('content')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <div class="mb-3">
         <div class="card">
-            <div class="card-header">Finanza</div>
+            <div class="card-header">Estadísticas de asistencia  de pacientes mensual</div>
 
                 <div class="card-body">
-                    <canvas id="myChart" style="max-width: 100%"></canvas>
+                    <div class="chart-container" style="height: 50vh">
+                        <canvas id="chart"></canvas>
+                    </div>
                         <script>
-                        var ctx = document.getElementById('myChart').getContext('2d');
-                        var myChart = new Chart(ctx, {
-                            type: 'bar',
-                            borderAlign:'inner',
-                            data: {
-                                labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'],
+                            var data = {
+                                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov"],
                                 datasets: [{
-                                    label: 'Pacientes atendidos',
-                                    data: [12, 19, 3, 5, 2, 3],
-                                    backgroundColor: [
-                                        'rgba(255, 99, 132, 0.2)',
-                                        'rgba(54, 162, 235, 0.2)',
-                                        'rgba(255, 206, 86, 0.2)',
-                                        'rgba(75, 192, 192, 0.2)',
-                                        'rgba(153, 102, 255, 0.2)'
-                                    ],
-                                    borderColor: [
-                                        'rgba(255, 99, 132, 1)',
-                                        'rgba(54, 162, 235, 1)',
-                                        'rgba(255, 206, 86, 1)',
-                                        'rgba(75, 192, 192, 1)',
-                                        'rgba(153, 102, 255, 1)'
-                                    ],
-                                    borderWidth: 1
+                                    label: "Pacientes",
+                                    backgroundColor: "rgba(255,99,132,0.2)",
+                                    borderColor: "rgba(255,99,132,1)",
+                                    borderWidth: 2,
+                                    hoverBackgroundColor: "rgba(255,99,132,0.4)",
+                                    hoverBorderColor: "rgba(255,99,132,1)",
+                                    data: [65, 59, 20, 81, 56, 55, 40, 20, 25, 32, 12],
                                 }]
-                            },
-                            options: {
+                            };
+
+                            var options = {
+                                maintainAspectRatio: false,
                                 scales: {
                                     yAxes: [{
-                                        ticks: {
-                                            beginAtZero: true
+                                        stacked: true,
+                                        gridLines: {
+                                            display: true,
+                                            color: "rgba(255,99,132,0.2)"
+                                        }
+                                    }],
+                                    xAxes: [{
+                                        gridLines: {
+                                            display: false
                                         }
                                     }]
                                 }
-                            }
-                        });
+                            };
+
+                            Chart.Bar('chart', {
+                                options: options,
+                                data: data
+                            });
+
                         </script>
                 </div>
         </div>
 </div>
 
 @endsection
-@section('finanza')
-    <!--chard.js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
-@endsection
+
 

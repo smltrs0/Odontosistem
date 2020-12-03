@@ -15,7 +15,7 @@ class PDFController extends Controller
     {
         $data = ['title' => 'Titulo para el pdf de ejemplo'];
         $pdf = PDF::loadView('myPDF', $data);
-        $pdf->setPaper('P','mm','letter');
+        $pdf->setPaper('A4', 'landscape');
         return $pdf->stream("dompdf_out.pdf", array("Attachment" => false));
 
 
