@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298f4cb9-3c52-47f8-9c41-2626d41b84ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CitasMedicasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CitasMedicasController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PDFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PDFController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/finanzas/finanzas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/finanzas/finanzas.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu-header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/citas-medicas/citas_medicas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/citas-medicas/citas_medicas.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/myPDF.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/myPDF.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pacientes/odontogram.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pacientes/odontogram.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +245,7 @@
       <workItem from="1604887447814" duration="8500000" />
       <workItem from="1605528597782" duration="4020000" />
       <workItem from="1605796292593" duration="363000" />
-      <workItem from="1607008695630" duration="6246000" />
+      <workItem from="1607008695630" duration="13344000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1605529817156</created>
@@ -258,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605529817156</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1607015133151</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607015133151</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,11 +272,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="0" width="1280" height="984" key="CommitChangelistDialog2" timestamp="1605529813679">
+    <state x="0" y="0" width="1280" height="984" key="CommitChangelistDialog2" timestamp="1607015130173">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="263" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1603494488548" />
-    <state x="0" y="0" width="1280" height="984" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1605529813679" />
+    <state x="0" y="0" width="1280" height="984" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1607015130173" />
     <state x="420" y="140" key="FileChooserDialogImpl" timestamp="1607013688057">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -284,18 +287,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="162" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1599509265946" />
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1607015101961">
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1607015475929">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1607015101961" />
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1607015475929" />
     <state x="457" y="402" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605529719349">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="457" y="402" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.984@0.0.1280.984" timestamp="1605529719349" />
-    <state x="303" y="1" width="672" height="982" key="search.everywhere.popup" timestamp="1607013742473">
+    <state x="303" y="1" width="672" height="982" key="search.everywhere.popup" timestamp="1607038372775">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1604895046675" />
-    <state x="303" y="1" width="672" height="982" key="search.everywhere.popup/0.0.1280.984@0.0.1280.984" timestamp="1607013742473" />
+    <state x="303" y="1" width="672" height="982" key="search.everywhere.popup/0.0.1280.984@0.0.1280.984" timestamp="1607038372775" />
   </component>
 </project>

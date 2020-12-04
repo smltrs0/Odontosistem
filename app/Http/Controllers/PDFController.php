@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\citas_medicas;
+use App\Pacientes;
 use Illuminate\Http\Request;
 use PDF;
 
@@ -11,10 +13,12 @@ class PDFController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function generatePDF($request='')
+    public function generatePDF(citas_medicas $id)
     {
-        $data = ['title' => 'Titulo para el pdf de ejemplo'];
-        $pdf = PDF::loadView('myPDF', $data);
+        $cita = $id;
+        $paciente= Pacientes::find($cita->pacientes_id);
+
+        $pdf = PDF::loadView('myPDF', array('cita'=> $cita, 'paciente'=> $paciente));
         $pdf->setPaper('A4', 'landscape');
         return $pdf->stream("dompdf_out.pdf", array("Attachment" => false));
 

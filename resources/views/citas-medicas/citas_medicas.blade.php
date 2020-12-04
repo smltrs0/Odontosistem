@@ -122,7 +122,7 @@
                                     </div>
                                     <div class="row mt-5">
                                         <div class="col-6">
-                                            <a href="#" class="btn btn-block btn-success"><i class="fa fa-print"></i>
+                                            <a href="{{ route('generar-factura', $cita->id)  }}" class="btn btn-block btn-success"><i class="fa fa-print"></i>
                                                 Generar factura</a>
                                         </div>
                                         <div class="col-6">
@@ -137,7 +137,7 @@
                         </div>
                         @else
                         <div class="alert alert-info col text-center">
-                            Este paciente no tiene nunguna cita medica registrada
+                            Este paciente no tiene ninguna cita medica registrada
                         </div>
                         @endif
                     </div>
@@ -240,7 +240,7 @@
                                             </ol>
                                         </div> --}}
                                     </div>
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -305,7 +305,7 @@
 const options = {
      @foreach ($procedimientos as $procedimiento)
       {{ $procedimiento->id }} :'{{ $procedimiento->title }}',
-        @endforeach 
+        @endforeach
 }
 
 const singleSelect = Vue.component('single-select', {
@@ -322,7 +322,7 @@ const singleSelect = Vue.component('single-select', {
         if (this.selected=='') {
             alert('Selecciona un procedimento')
         }else{
-            
+
                         this.procedimientos.push({
                         id: this.selected,
                         cantidad: this.cantidad
@@ -331,13 +331,13 @@ const singleSelect = Vue.component('single-select', {
                     this.selected= '';
 
         }
-        
-        
+
+
       },
       remove: function(event, index) {
      var result = confirm("¿Estás seguro que deseas borrar? ");
       if(result) {
-        this.procedimientos.splice(index, 1);        
+        this.procedimientos.splice(index, 1);
       }
 		}
   }

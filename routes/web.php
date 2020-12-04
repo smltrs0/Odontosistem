@@ -64,7 +64,7 @@ Route::get('facturas', function () {
 })->name('facturas');
 
 // Ruta para crear PDF de ejemplo
-Route::get('generate-pdf','PDFController@generatePDF');
+Route::get('generar-factura/{id}','PDFController@generatePDF')->name('generar-factura');
 
 Route::get('test', function(){
     $procedures = procedure::find(50);

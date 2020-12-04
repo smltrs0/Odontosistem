@@ -38,7 +38,7 @@ class CitasMedicasController extends Controller
      */
     public function store(Request $request)
     {
-       
+
         $cita_medica = [
             'evaluacion' => $request->evaluacion,
             'medicacion' => $request->medicacion,
@@ -63,7 +63,7 @@ class CitasMedicasController extends Controller
         $cita_medica->procedimientos()->sync($data);
         // Falta capturar los datos en la visual que el cambio se realizo correctamete
         return redirect("citas-medicas/".$request->paciente_id)->with('success', 'Datos actualizados correctamente');
-       
+
     }
 
     /**
