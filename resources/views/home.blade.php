@@ -149,13 +149,17 @@ foreach (Auth::user()->roles as $rol) {
     <div class="container text-center">
         <p class="h2 text-dark">Bienvenid@ {{Auth::user()->name}}</p>
         <div>
-            <p>Si aun no tienes una cita puedes crear una pulsando el siguiente link</p>
-            <a href="{{route('citas.index')}}">Crea una cita</a>
-{{--           @if(Auth::user()->pacientes->citas())--}}
-{{--               Tienes citas--}}
-{{--            @else--}}
-{{--               no tienes citas--}}
-{{--            @endif--}}
+            @if($paciente_usuario == '')
+                <a href="{{route('citas.index')}}">Crea una cita</a>
+            @else
+                <div>
+                    Termina de rellenar tus datos personales para poder seguir avanzando.
+                    <div>
+                        <a href="{{route('mi-cuenta.index')}}">Configurar cuenta</a>
+                    </div>
+                </div>
+            @endif
+
 
         </div>
     </div>

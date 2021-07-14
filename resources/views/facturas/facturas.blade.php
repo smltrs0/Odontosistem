@@ -17,10 +17,10 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>1</td>
+                                <td>001</td>
+                                <td>Angelo Amaro</td>
+                                <td>04-12-2020 14:35:21</td>
                                 <td>
                                     <a href=""><span class="fa fa-eye"></span></a>
                                     <a href=""><span class="fa fa-edit"></span></a>

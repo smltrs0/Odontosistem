@@ -1,3 +1,6 @@
+<?php
+$id= 0;
+?>
 <!doctype html>
 <html lang="es">
 
@@ -87,7 +90,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="comentario-medico">Comentario (Solo visible para el médico)</label>
+                                        <label for="comentario-medico">Comentario (Solo visible para el
+                                            médico)</label>
                                         <p>
                                             {{ $cita->comentario_doctor }}
                                         </p>
@@ -122,12 +126,45 @@
                                     </div>
                                     <div class="row mt-5">
                                         <div class="col-6">
-                                            <a href="{{ route('generar-factura', $cita->id)  }}" class="btn btn-block btn-success"><i class="fa fa-print"></i>
-                                                Generar factura</a>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                data-target="#exampleModal">
+                                                Generar factura
+                                            </button>
                                         </div>
                                         <div class="col-6">
                                             <a href="#" class="btn btn-block btn-primary"><i class="fa fa-edit"></i>
                                                 Modificar datos</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Button trigger modal -->
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Cantidad pagada</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label for="">Introduca la cantidad pagada</label>
+                                                    <input class="form-control" type="number" name="cantidad"
+                                                        id="cantidad">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <div class="row">
+                                                <a href="{{ route('generar-factura', $cita->id)  }}"
+                                                            class="btn btn-block btn-success"><i class="fa fa-print"></i>
+                                                            Generar factura</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -197,13 +234,13 @@
                                     <div id="app">
 
                                         <single-select inline-template>
-                                        <div>
+                                            <div>
 
 
-                                            <div class="row">
+                                                <div class="row">
                                                     <div class="col-sm-8">
-                                                        <select-2  class="form-control"
-                                                            :options="options" name="test" v-model="selected"></select-2>
+                                                        <select-2 class="form-control" :options="options" name="test"
+                                                            v-model="selected"></select-2>
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <input class="form-control form-control-sm" type="number"
@@ -216,137 +253,149 @@
                                                 </div>
                                                 <div class="mt-5">
                                                     <ul class="list-group">
-                                                        <li  v-for=" (procedimiento, index) of procedimientos" v-on:click="remove($event, index)" class="list-group-item">
-                                                              @{{ procedimiento.cantidad }}
-                                                              <button type="button" class="close" data-dismiss="alert"
-                                                              aria-label="Close">
-                                                              <span aria-hidden="true">&times;</span>
-                                                          </button>
+                                                        <li v-for=" (procedimiento, index) of procedimientos"
+                                                            v-on:click="remove($event, index)" class="list-group-item">
+                                                            @{{ procedimiento.cantidad }}
+                                                            @{{ procedimiento.text }}
+                                                            <button type="button" class="close" data-dismiss="alert"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
                                                         </li>
-                                                      </ul>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </single-select>
+                                        <div class="modal-footer">
+                                            <button @click="enviar()" class="btn btn-primary">Registrar evaluación
+                                                médica
+                                            </button>
+                                        </div>
                                         {{-- <div>
-                                            <ol class="list-unstyled">
-                                                <li v-for="(item, index) in procedimientos" v-on:click="remove($event, index)"
-                                                    class="alert alert-info ">
-                                                    @{{ item.cantidad}}
-                                                    <button type="button" class="close" data-dismiss="alert"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </li>
-                                            </ol>
-                                        </div> --}}
-                                    </div>
+                                        <ol class="list-unstyled">
+                                            <li v-for="(item, index) in procedimientos" v-on:click="remove($event, index)"
+                                                class="alert alert-info ">
+                                                @{{ item.cantidad}}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </li>
+                                        </ol>
+                                    </div> --}}
 
                                 </div>
+
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="submit" id="elSubmit" class="btn btn-primary">Registrar evaluación médica
-                            </button>
-                        </div>
                     </div>
-                </form>
+
             </div>
+            </form>
         </div>
+    </div>
     </div>
     <!--Final modal Registrar cita medica-->
 
     <script>
         Vue.component('select-2', {
-  template: '<select v-bind:name="name" class="form-control"></select>',
-  props: {
-    name: '',
-    options: {
-      Object
-    },
-    value: null,
-    multiple: {
-      Boolean,
-      default: false
-    }
-  },
-  data() {
-    return {
-      select2data: []
-    }
-  },
-  mounted() {
-    this.formatOptions()
-    let vm = this
-    let select = $(this.$el)
-    select.select2({
-      placeholder: 'Buscar procedimiento',
-      width: '100%',
-      allowClear: true,
-      data: this.select2data
+        template: '<select v-bind:name="name" class="form-control"></select>',
+        props: {
+            name: '',
+            options: {
+                Object
+            },
+            value: null,
+            multiple: {
+                Boolean,
+                default: false
+            }
+        },
+        data() {
+            return {
+                select2data: []
+            }
+        },
+        mounted() {
+            this.formatOptions()
+            let vm = this
+            let select = $(this.$el)
+            select.select2({
+                placeholder: 'Buscar procedimiento',
+                width: '100%',
+                allowClear: true,
+                data: this.select2data
+            })
+                .on('change', function () {
+                    vm.$emit('input', select.val())
+                })
+            select.val(this.value).trigger('change')
+        },
+        methods: {
+            formatOptions() {
+                this.select2data.push({id: '', text: 'Select'})
+                for (let key in this.options) {
+                    this.select2data.push({id: key, text: this.options[key]})
+                }
+            }
+        },
+        destroyed: function () {
+            $(this.$el).off().select2('destroy')
+        }
     })
-      .on('change', function () {
-      vm.$emit('input', select.val())
-    })
-    select.val(this.value).trigger('change')
-  },
-  methods: {
-    formatOptions() {
-      this.select2data.push({ id: '', text: 'Select' })
-      for (let key in this.options) {
-        this.select2data.push({ id: key, text: this.options[key] })
-      }
+
+    const options = {
+    @foreach ($procedimientos as $procedimiento)
+    {{ $procedimiento->id }} :
+    '{{ $procedimiento->title }}',
+    @endforeach
     }
-    },
-  destroyed: function () {
-    $(this.$el).off().select2('destroy')
-  }
-})
 
-const options = {
-     @foreach ($procedimientos as $procedimiento)
-      {{ $procedimiento->id }} :'{{ $procedimiento->title }}',
-        @endforeach
-}
-
-const singleSelect = Vue.component('single-select', {
-  data () {
-    return {
-      selected: '',
-      cantidad: '4',
-      options,
-      procedimientos:[],
-    }
-  },
-  methods:{
-    agregar: function() {
-        if (this.selected=='') {
-            alert('Selecciona un procedimento')
-        }else{
-
-                        this.procedimientos.push({
+    const singleSelect = Vue.component('single-select', {
+        data() {
+            return {
+                selected: '',
+                cantidad: '1',
+                options,
+                procedimientos: [],
+                text: '',
+            }
+        },
+        methods: {
+            agregar: function () {
+                debugger
+                if (this.selected == '') {
+                    alert('Selecciona un procedimiento')
+                } else {
+                    this.procedimientos.push({
                         id: this.selected,
-                        cantidad: this.cantidad
+                        cantidad: this.cantidad,
+                        text: this.text
                     });
                     this.cantidad = '1';
-                    this.selected= '';
+                    this.selected = '';
+                    console.log(procedimientos)
 
+                }
+
+
+            },
+            remove: function (event, index) {
+                var result = confirm("¿Estás seguro que deseas borrar? ");
+                if (result) {
+                    this.procedimientos.splice(index, 1);
+                }
+            },
+            enviar: function () {
+                var n1 = prompt("Cantidad Pagada");
+
+            }
         }
+    })
 
+    const app = new Vue({
+        el: '#app',
 
-      },
-      remove: function(event, index) {
-     var result = confirm("¿Estás seguro que deseas borrar? ");
-      if(result) {
-        this.procedimientos.splice(index, 1);
-      }
-		}
-  }
-})
-
-const app = new Vue({
-  el: '#app',
-
-})
+    })
 
     </script>
 

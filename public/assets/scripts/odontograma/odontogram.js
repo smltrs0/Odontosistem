@@ -259,7 +259,7 @@ function addChanges(newChanges = []) {
     for( var i = 0; i < oldChanges.length; i++ ) {
         var li = $("<li></li>")// Creamos un elemento li
         // Añadimos el title y el autor al elemento li
-        li.append(oldChanges[i].title + " (" + oldChanges[i].type + ")");
+        li.append(oldChanges[i].title + " ( Diente:" + oldChanges[i].tooth + ")");
 
         // Comprobamos si el libro tiene partes
         if( oldChanges[i].Partes != undefined && oldChanges[i].Partes.length > 0 ) {

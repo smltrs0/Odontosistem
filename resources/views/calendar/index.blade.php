@@ -7,7 +7,7 @@
             <div class="card-body">
                     <table class="table">
                         <tr>
-                                <th width="">Nombre</th>
+                                {{-- <th width="">Nombre</th> --}}
                                 <th> Fecha</th>
                                 <th width="30%">Estado</th>
                                 <th width="20%">accion</th>
@@ -16,7 +16,7 @@
 
                             @foreach($citas as $cita)
                             <tr>
-                                <td>{{ Str::ucfirst( $cita->paciente->name)." ".Str::ucfirst($cita->paciente->last_name) }}</td>
+                                {{-- <td>{{ Str::ucfirst( $cita->paciente->name)." ".Str::ucfirst($cita->paciente->last_name) }}</td> --}}
                                 <td>
                                    {{ $fechaCita = date( 'd-m-Y' ,strtotime($cita->fecha)) }}
                                 </td>

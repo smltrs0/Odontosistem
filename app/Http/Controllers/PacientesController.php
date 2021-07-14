@@ -16,7 +16,7 @@ class PacientesController extends Controller
     public function index()
     {
         //
-        $pacientes = Pacientes::latest()->paginate(10);
+        $pacientes = Pacientes::latest()->paginate(5);
 
         return view('pacientes.index', compact('pacientes'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -118,6 +118,19 @@ class PacientesController extends Controller
         $paciente->delete();
         return redirect()->route('pacientes.index')
             ->with('success', 'Paciente eliminado correctamente');
+    }
+
+    public function guardarOdontograma($pacientes, Request $request){
+
+        $pacientes = Pacientes::find($pacientes);
+
+        $pacientes->procedures = $request->procedures;
+        $pacientes->odontogramaComentario = $request->odontogramaComentario;
+
+        $pacientes->update();
+
+
+        return redirect()->back()->with('success', 'Actualizado correctamente');
     }
 
 }

@@ -34,17 +34,15 @@ class Pacientes extends Model
         'anestesicos'
                 ];
 
-    public function user()
-    {
+    public function user(){
         return  $this->belongsTo('App\User');
     }
-    public function citas()
-    {
+
+    public function citas(){
         return $this->hasMany('App\Citas');
     }
 
-    public function citas_medicas()
-    {
+    public function citas_medicas(){
         return $this->hasMany('App\citas_medicas');
     }
 }

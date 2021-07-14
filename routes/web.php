@@ -26,6 +26,8 @@ Route::resource('/pacientes', 'PacientesController');
 
 Route::get('paciente/{id}/odontograma', 'PacientesController@viewOdontograma');
 
+Route::patch('guardarOdontograma/{id}','PacientesController@guardarOdontograma')->name('guardarOdontograma');
+
 Route::resource('/role', 'RoleController')->names('role');
 
 Route::resource('/procedures', 'procedureController');
@@ -43,6 +45,9 @@ Route::get('backup', 'BackupController@index')->name('respaldo');
 Route::get('backup/create', 'BackupController@create');
 Route::get('backup/download/{file_name}', 'BackupController@download');
 Route::get('backup/delete/{file_name}', 'BackupController@delete');
+Route::get('/restauracion', function (){
+    return view('backup.restore');
+})->name('restauracion');
 
 // Solo vistas
 

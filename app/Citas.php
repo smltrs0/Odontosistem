@@ -15,6 +15,6 @@ class Citas extends Model
 
     public function Paciente()
     {
-        return $this->hasOne('App\Pacientes', 'id', 'paciente_id');
+        return $this->belongsTo('App\Pacientes', 'paciente_id', 'id');
     }
 }

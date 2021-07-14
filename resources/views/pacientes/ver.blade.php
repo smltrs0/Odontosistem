@@ -22,8 +22,8 @@
                            href="#nav-antecedentes" role="tab" aria-controls="nav-antecedentes"
                            aria-selected="false">Anamnesis
                             general</a>
-                        <a class="nav-item nav-link ml-auto" href="{{ url("paciente/{$paciente->id}/odontograma") }}">Odontograma</a>
-                        <a class="nav-item nav-link nav-item " href="{{ url('citas-medicas') }}">Citas medicas</a>
+                        <a class="nav-item nav-link ml-auto" href="javascript:ventanaSecundaria('{{ url("paciente/{$paciente->id}/odontograma") }}')">Odontograma</a>
+                        <a class="nav-item nav-link nav-item " href="javascript:ventanaSecundaria('{{ url("citas-medicas/{$paciente->id}") }}')">Citas medicas</a>
                     </div>
                 </nav>
                 <!--Final de las pestañas-->

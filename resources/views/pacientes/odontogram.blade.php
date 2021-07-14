@@ -16,8 +16,11 @@
                 <div class="content-wrapper">
                     <header class="text-center m-4">
                         <h1 class="top-round-borders">Odontograma de {{ ucfirst($paciente->name)." ".ucfirst($paciente->last_name) }}</h1>
+                        @include('partials.alerts')
                     </header>
-                    <form action="./index.php">
+                    <form method="POST" action="{{ route('guardarOdontograma', $paciente) }}">
+                        @method('PATCH')
+                        @csrf
                         <div class="row">
                             <div class="col-md-12 ">
                                 <div class="card">
@@ -589,6 +592,7 @@
                                         </div>
                                         <!-- ./Odontogram -->
                                     </div>
+
                                 </div>
                             </div>
 
@@ -602,8 +606,9 @@
 
                                         </div>
                                         <div class="mb-3 ">
-                                            <label for="procedures" class="text-danger">Cambios</label>
-                                            <textarea name="procedures" id="procedures"
+                                            <label for="procedures" class="text-danger">Comentarios</label>
+                                            <textarea class="form-control" name="odontogramaComentario">{{$paciente->odontogramaComentario}}</textarea>
+                                            <textarea hidden name="procedures" id="procedures"
                                                 class="form-control full-textarea" rows="10">[]</textarea>
                                         </div>
                                     </div>
@@ -876,7 +881,7 @@
                     url: "{{ asset('./assets/scripts/odontograma/procedures.json') }}", // Get all procedures
                     success: function(initialProcedures) {
                         odontogram.procedures = initialProcedures;
-                        odontogram.config = {"event_id":11492,"name":"Samuel Trias","showsPrimary":false,"comments":"Este es un comentario de prueba desde un json","procedures":"[]"};
+                        odontogram.config = {"event_id":11492,"name":"Samuel Trias","showsPrimary":false,"comments":"Este es un comentario de prueba desde un json","procedures":'{!!  $paciente->procedures !!}'};
 
                     },
                     error: function(XMLHttpRequest, textStatus, errorThrown) {

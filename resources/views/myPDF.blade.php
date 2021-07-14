@@ -1,6 +1,4 @@
-$invoiceDate = date("d/M/Y, H:i:s", strtotime(['order_date']));
-$output = '';
-$output .= '
+
 <table width="100%" border="1" cellpadding="5" cellspacing="0">
     <tr>
         <td colspan="2" align="center" style="font-size:18px"><b>FACTURA ODONTOSISTEMS</b> <img width="20px"
@@ -60,20 +58,16 @@ $output .= '
                     <td align="left">{{ sprintf("%01.2f", $subTotal*0.12) }}</td>
                 </tr>
                 <tr>
-                    <td align="right" colspan="5">Monto Tasa:</td>
-                    <td align="left">'.['order_total_tax'].'</td>
-                </tr>
-                <tr>
                     <td align="right" colspan="5">Total:</td>
                     <td align="left">{{ sprintf("%01.2f",($subTotal*0.12) + $subTotal) }}</td>
                 </tr>
                 <tr>
                     <td align="right" colspan="5">Monto Pagado:</td>
-                    <td align="left">'.['order_amount_paid'].'</td>
+                    <td align="left">'45'</td>
                 </tr>
                 <tr>
                     <td align="right" colspan="5"><b>Monto adeudado:</b></td>
-                    <td align="left">'.['order_total_amount_due'].'</td>
+                    <td align="left">'19.36'</td>
                 </tr>
 
             </table>

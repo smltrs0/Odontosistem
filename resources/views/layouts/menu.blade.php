@@ -107,12 +107,6 @@ foreach (Auth::user()->roles as $rol) {
                         </a>
                         <ul>
                             <li>
-                                <a href="">
-                                    <i class="metismenu-icon">
-                                    </i>Agregar nuevo
-                                </a>
-                            </li>
-                            <li>
                                 <a href="{{route('user.index')}}">
                                     <i class="metismenu-icon">
                                     </i>Ver todos los usuarios
@@ -142,7 +136,7 @@ foreach (Auth::user()->roles as $rol) {
                             <li>
                                 <a href="{{route('estadisticas-pacientes')}}">
                                     <i class="metismenu-icon">
-                                    </i>Estadisticas de pacientes
+                                    </i>Estadísticas de pacientes
                                 </a>
                             </li>
                             <li>
@@ -173,7 +167,7 @@ foreach (Auth::user()->roles as $rol) {
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{route('restauracion')}}">
                                     <i class="metismenu-icon">
                                     </i>Restaurar
                                 </a>
