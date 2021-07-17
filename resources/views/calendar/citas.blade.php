@@ -1,3 +1,9 @@
+<?php
+    $admin = false;
+    foreach (Auth::user()->roles as $rol) {
+        if ($rol->slug == "admin") $admin = true;
+    }
+?>
 @extends('layouts.app')
 @section('content')
 
@@ -55,13 +61,23 @@
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label for="cita-fecha">Fecha</label>
-                                    <input id="cita-fecha" class="form-control" min="" type="date" name="fecha"
-                                           value="">
+                                    <input id="cita-fecha" class="form-control" min="" type="date" name="fecha" value="" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="cita-hora">Hora</label>
-                                    <input class="form-control" type="time" name="hora" id="cita-hora">
+                                    <input class="form-control" type="time" name="hora" id="cita-hora" required>
                                 </div>
+                                @if ($admin)
+                                    <div class="form-group">
+                                        <label for="cita-hora">Usuario</label>
+                                        <select class="form-control" name="usuario" required>
+                                            <option value="" disabled selected>-Seleccione-</option> 
+                                            @foreach($usuarios as $usuario)
+                                                <option value="{{$usuario->id}}">{{$usuario->name}}</option> 
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                @endif
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" id="elSubmit" class="btn btn-primary">Crear</button>

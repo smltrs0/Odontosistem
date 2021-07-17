@@ -155,27 +155,27 @@
                                     <label>¿Paciente Embarazada?</label>
                                     <div>
                                         <label class="radio-inline">
-                                            <input type="radio" name="embarazada" value="1" readonly>Si</label>
+                                            <input type="radio" name="embarazada" value="1" disabled>Si</label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="embarazada" value="0" checked="" readonly>No</label>
+                                            <input type="radio" name="embarazada" value="0" disabled>No</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <label>¿Ha presentado problemas de Coagulación?</label>
                                     <div>
                                         <label class="radio-inline">
-                                            <input type="radio" name="coagulacion" value="1" readonly>Si</label>
+                                            <input type="radio" name="coagulacion" value="1" disabled>Si</label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="coagulacion" value="0" checked="" readonly>No</label>
+                                            <input type="radio" name="coagulacion" value="0" disabled>No</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <label>¿Ha presentado problemas con Anestésicos Locales?</label>
                                     <div>
                                         <label class="radio-inline">
-                                            <input type="radio" name="anestesicos" value="1" readonly>Si</label>
+                                            <input type="radio" name="anestesicos" value="1" disabled>Si</label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="anestesicos" value="0" checked="" readonly>No</label>
+                                            <input type="radio" name="anestesicos" value="0"  disabled>No</label>
                                     </div>
                                 </div>
                             </div>

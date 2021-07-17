@@ -141,11 +141,10 @@
     })
 
     $.getJSON("https://s3.amazonaws.com/dolartoday/data.json",function(data){
-  console.log('DTD: '+data.USD.transferencia+ ' Sicad: ' + data.USD.sicad2);
-  document.querySelector("#dolar").innerHTML='DTD: '+data.USD.transferencia+ ' Sicad: ' + data.USD.sicad2;
+        document.querySelector("#dolar").innerHTML='Sicad: ' + numero_a_moneda(data.USD.sicad2, 2)+ ' BSF';
     });
 
-    document.querySelector("#dolar").title="Ultimo cierre, obtenido de DolarToday";
+    document.querySelector("#dolar").title="Valor actual $";
 
 
     function toggleDollar() {
@@ -154,6 +153,25 @@
   } else {
     document.querySelector("#dolar").style.display = "none";
   }
+}
+
+function numero_a_moneda(amount, decimals) {
+amount += '';
+amount = parseFloat(amount.replace(/[^0-9\.]/g, '')); // elimino cualquier cosa que no sea numero o punto
+decimals = decimals || 0; // por si la variable no fue fue pasada
+
+if (isNaN(amount) || amount === 0) 
+    return parseFloat(0).toFixed(decimals);
+
+amount = '' + amount.toFixed(decimals);
+
+var amount_parts = amount.split('.'),
+    regexp = /(\d+)(\d{3})/;
+
+while (regexp.test(amount_parts[0]))
+    amount_parts[0] = amount_parts[0].replace(regexp, '$1' + ',' + '$2');
+
+return amount_parts.join('.');
 }
 
 

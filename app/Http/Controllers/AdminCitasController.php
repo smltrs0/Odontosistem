@@ -14,21 +14,18 @@ class AdminCitasController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
-    {
+    public function index(){
         Gate::authorize('haveaccess','citas.view');
         $citas = Citas::paginate(15);
 
         return view('calendar.index', compact('citas'));
     }
 
-    public function create()
-    {
+    public function create(){
         //
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $request->validate([
             'fecha' => 'required',
         ]);

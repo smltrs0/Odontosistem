@@ -1,6 +1,3 @@
-<?php
-$id= 0;
-?>
 <!doctype html>
 <html lang="es">
 
@@ -43,7 +40,6 @@ $id= 0;
 
             <div class="card-body">
                 <div class="">
-
                     <div class="row">
                         @if (count($paciente->citas_medicas))
                         <div class="col-4">
@@ -188,8 +184,7 @@ $id= 0;
     <!-- Modal -->
     <div class="modal fade" id="evaluacionModal" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-lg">
-            <div>
-                <form action="#" v-on:submit.prevent="onSubmit">
+            <div id="app">
                     @csrf
                     <div class="modal-content">
                         <div class="modal-header">
@@ -202,41 +197,35 @@ $id= 0;
                             <div class="row">
                                 <div class="form-group col-md-6 col-sm-12">
                                     <label for="evaluacion">Evaluacion</label>
-                                    <input type="hidden" name="paciente_id" value="{{ $paciente->id }}">
-                                    <textarea class="form-control" name="evaluacion" id="evaluacion">
+                                    <textarea class="form-control" v-model="evaluacion" name="evaluacion" id="evaluacion">
                                                 </textarea>
                                 </div>
                                 <div class="form-group col-md-6 col-sm-12">
                                     <label for="medicacion">Medicacion</label>
-                                    <textarea class="form-control" name="medicacion" id="medicacion"></textarea>
+                                    <textarea v-model="medicacion" class="form-control" name="medicacion" id="medicacion"></textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6 col-sm-12">
                                     <label for="analisis">Análisis clínico solicitados</label>
-                                    <textarea class="form-control" name="analisis" id="analisis"></textarea>
+                                    <textarea v-model="analisis" class="form-control" name="analisis" id="analisis"></textarea>
                                 </div>
                                 <div class="form-group col-md-6 col-sm-12">
                                     <label for="comentario-paciente">Comentario (Visible para el paciente)</label>
-                                    <textarea class="form-control" name="comentario_paciente"
-                                        id="comentario-paciente"></textarea>
+                                    <textarea class="form-control" v-model="comentario_paciente" name="comentario_paciente" id="comentario-paciente"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="comentario-medico">Comentario (Solo visible para el médico)</label>
-                                <textarea class="form-control" name="comentario_medico"
+                                <textarea class="form-control" v-model="comentario_medico" name="comentario_medico"
                                     id="comentario_medico"></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="input-text" for="procedimientos">Procedimientos a aplicar</label>
                                 <br>
                                 <div class="col">
-                                    <div id="app">
-
-                                        <single-select inline-template>
+                                    <div>
                                             <div>
-
-
                                                 <div class="row">
                                                     <div class="col-sm-8">
                                                         <select-2 class="form-control" :options="options" name="test"
@@ -252,45 +241,36 @@ $id= 0;
                                                     </div>
                                                 </div>
                                                 <div class="mt-5">
+                                                    <label>Procedimientos seleccionados:</label>
                                                     <ul class="list-group">
                                                         <li v-for=" (procedimiento, index) of procedimientos"
                                                             v-on:click="remove($event, index)" class="list-group-item">
-                                                            @{{ procedimiento.cantidad }}
-                                                            @{{ procedimiento.text }}
+
+                                                            @{{ castearNombreProcedimiento(procedimiento.id) }}
+                                                            <span class="badge badge-primary badge-pill" title="Cantidad">@{{ procedimiento.cantidad }}</span>                                                            
                                                             <button type="button" class="close" data-dismiss="alert"
                                                                 aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </li>
+                                                        <li v-if="procedimientos.length == 0" class="list-group-item text-center">
+                                                            Ningún procedimiento seleccionado
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </single-select>
                                         <div class="modal-footer">
-                                            <button @click="enviar()" class="btn btn-primary">Registrar evaluación
+                                            <button @click="guardarEvaluacion()" class="btn btn-primary">Registrar evaluación
                                                 médica
                                             </button>
                                         </div>
-                                        {{-- <div>
-                                        <ol class="list-unstyled">
-                                            <li v-for="(item, index) in procedimientos" v-on:click="remove($event, index)"
-                                                class="alert alert-info ">
-                                                @{{ item.cantidad}}
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        </li>
-                                        </ol>
-                                    </div> --}}
 
                                 </div>
 
                             </div>
                         </div>
                     </div>
-
             </div>
-            </form>
         </div>
     </div>
     </div>
@@ -343,29 +323,85 @@ $id= 0;
         }
     })
 
-    const options = {
+    let options = {
     @foreach ($procedimientos as $procedimiento)
     {{ $procedimiento->id }} :
     '{{ $procedimiento->title }}',
     @endforeach
     }
 
-    const singleSelect = Vue.component('single-select', {
-        data() {
-            return {
-                selected: '',
-                cantidad: '1',
-                options,
-                procedimientos: [],
-                text: '',
-            }
+    const app = new Vue({
+        el: '#app',
+        data:{
+            errors: [],
+            paciente_id: '{{ $paciente->id }}',
+            evaluacion: '',
+            analisis: '',
+            comentario_paciente: '',
+            comentario_medico: '',
+            medicacion:'',
+            selected: '',
+            cantidad: '1',
+            options,
+            procedimientos: [],
+            text: '',
         },
-        methods: {
+        methods:{
+            guardarEvaluacion(){
+                this.validarCampos();
+                if(this.errors.length == 0){
+                    let data = {
+                        evaluacion: this.evaluacion,
+                        paciente_id: this.paciente_id,
+                        analisis: this.analisis,
+                        comentario_paciente: this.comentario_paciente,
+                        comentario_medico: this.comentario_medico,
+                        medicacion: this.medicacion,
+                        procedimientos: this.procedimientos,
+                    }
+
+                   fetch('{{ route('citas-medicas.store', $paciente->id) }}', {
+                    headers:{
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    method:'POST',
+                    body: JSON.stringify(data)
+                   }).then(response => {
+                        console.log(response)
+                        if(response.status == 200){
+                            alert('Se ha guardado exitosamente la evaluación medica.')
+                            location.reload();
+                        } 
+                        else console.error(response.msg);
+                   })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+                }else{
+                    this.errors.forEach(function(error, index){
+                        alert(error);
+                    })
+                }
+                
+            },
+            validarCampos(){
+                this.errors = [];
+                if(this.paciente_id == '' || this.paciente_id == null){
+                    this.errors.push('El paciente no puede estar vacío, por favor recarga la página');
+                }
+
+                if(this.evaluacion == '' || this.evaluacion == null){
+                    this.errors.push('La evaluación no puede estar en blanco');
+                } 
+            },
+            castearNombreProcedimiento(id){
+               return this.options[id];
+            },
             agregar: function () {
-                debugger
                 if (this.selected == '') {
                     alert('Selecciona un procedimiento')
-                } else {
+                }else {
                     this.procedimientos.push({
                         id: this.selected,
                         cantidad: this.cantidad,
@@ -374,7 +410,6 @@ $id= 0;
                     this.cantidad = '1';
                     this.selected = '';
                     console.log(procedimientos)
-
                 }
 
 
@@ -385,15 +420,7 @@ $id= 0;
                     this.procedimientos.splice(index, 1);
                 }
             },
-            enviar: function () {
-                var n1 = prompt("Cantidad Pagada");
-
-            }
         }
-    })
-
-    const app = new Vue({
-        el: '#app',
 
     })
 

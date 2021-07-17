@@ -17,6 +17,7 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
+        "select2/select2": "^4.0",
         "spatie/laravel-backup": "^6.11",
         "yajra/laravel-datatables-oracle": "~9.0"
     },

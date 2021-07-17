@@ -1,3 +1,30 @@
+<style>
+.contenedor-moneda {
+    background-color: #fff;
+	list-style: none;
+	/* contain the list items */
+	overflow: hidden;
+	/*margin: 0 auto;
+	display: table;*/ /* ul will behave like a table now */
+	text-align: center;
+    padding-right: 2rem;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.elemento-moneda{
+    font-size: 12px;
+    display: inline-block;
+    /* padding:0.5em; */
+    border: 5px hidden #1C6EA4;
+}
+
+.shadow-moneda {
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(50, 50, 50, 0.20);
+    -moz-box-shadow:    0px 0px 30px 0px rgba(50, 50, 50, 0.20);
+    box-shadow:         0px 0px 30px 0px rgba(50, 50, 50, 0.20);
+}
+
+</style>
 <div class="app-header header-shadow fixed-top">
     <div class="app-header__logo">
         <div class="logo-src"></div>
@@ -46,9 +73,11 @@
         </div>
         @endauth
         <!--Final Header busqueda-->
-        <div style="margin-left:50vh" class="text-muted">
-            <p class="content-center" id="dolar"></p>
-        </div>
+        <ul style="margin-left:50vh" class="text-muted contenedor-moneda shadow-moneda">
+            <li class="elemento-moneda">
+                <p class="content-center" id="dolar"></p>
+            </li>
+        </ul>
         <div class="app-header-right">
             <div class="header-btn-lg pr-0">
                 <div class="widget-content p-0">

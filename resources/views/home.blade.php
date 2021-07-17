@@ -1,10 +1,8 @@
 <?php
-$admin = false;
-foreach (Auth::user()->roles as $rol) {
-    if ($rol->slug == "admin"){
-        $admin = true;
+    $admin = false;
+    foreach (Auth::user()->roles as $rol) {
+        if ($rol->slug == "admin") $admin = true;
     }
-}
 ?>
 @extends('layouts.app')
 
@@ -33,11 +31,11 @@ foreach (Auth::user()->roles as $rol) {
                     <div class="widget-content-outer">
                         <div class="widget-content-wrapper">
                             <div class="widget-content-left pr-2 fsize-1">
-                                <div class="widget-numbers mt-0 fsize-3 text-danger">3</div>
+                                <div class="widget-numbers mt-0 fsize-3 text-danger">{{ $citas_canceladas }}</div>
                             </div>
                             <div class="widget-content-right w-100">
                                 <div class="progress-bar-xs progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="71" aria-valuemin="0" aria-valuemax="100" style="width: 71%;"></div>
+                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="{{$citas_canceladas}}" aria-valuemin="0" aria-valuemax="{{$numero_de_citas}}" style="width: {{round($citas_canceladas/$numero_de_citas*100)}}%;"></div>
                                 </div>
                             </div>
                         </div>
@@ -54,11 +52,11 @@ foreach (Auth::user()->roles as $rol) {
                     <div class="widget-content-outer">
                         <div class="widget-content-wrapper">
                             <div class="widget-content-left pr-2 fsize-1">
-                                <div class="widget-numbers mt-0 fsize-3 text-success">54</div>
+                                <div class="widget-numbers mt-0 fsize-3 text-success">{{ $citas_confirmada}}</div>
                             </div>
                             <div class="widget-content-right w-100">
                                 <div class="progress-bar-xs progress">
-                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100" style="width: 54%;"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{$citas_confirmada}}" aria-valuemin="0" aria-valuemax="100" style="width: {{round($citas_confirmada/$numero_de_citas*100)}}%;"></div>
                                 </div>
                             </div>
                         </div>
@@ -75,11 +73,11 @@ foreach (Auth::user()->roles as $rol) {
                     <div class="widget-content-outer">
                         <div class="widget-content-wrapper">
                             <div class="widget-content-left pr-2 fsize-1">
-                                <div class="widget-numbers mt-0 fsize-3 text-warning">32</div>
+                                <div class="widget-numbers mt-0 fsize-3 text-warning">{{ $citas_sin_confirmar}}</div>
                             </div>
                             <div class="widget-content-right w-100">
                                 <div class="progress-bar-xs progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style="width: 32%;"></div>
+                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{$citas_sin_confirmar}}" aria-valuemin="0" aria-valuemax="100" style="width: {{round($citas_sin_confirmar/$numero_de_citas*100)}}%;"></div>
                                 </div>
                             </div>
                         </div>
@@ -96,11 +94,11 @@ foreach (Auth::user()->roles as $rol) {
                     <div class="widget-content-outer">
                         <div class="widget-content-wrapper">
                             <div class="widget-content-left pr-2 fsize-1">
-                                <div class="widget-numbers mt-0 fsize-3 text-info">89</div>
+                                <div class="widget-numbers mt-0 fsize-3 text-info">{{ $numero_de_citas }}</div>
                             </div>
                             <div class="widget-content-right w-100">
                                 <div class="progress-bar-xs progress">
-                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
                                 </div>
                             </div>
                         </div>
@@ -117,8 +115,8 @@ foreach (Auth::user()->roles as $rol) {
         <div class="card-body">
             @if(count($citas)>0)
                 <div id="pacientes" class="list-group list-group-flush">
-                    <div class="d-flex justify-content-between align-items-center"> <strong>Turno</strong>  <strong> Nombre
-                            del paciente</strong>
+                    <div class="d-flex justify-content-between align-items-center"> 
+                        <strong>Turno</strong>  <strong> Nombre del paciente</strong>
                         <strong>Estado del paciente</strong>
                     </div>
                     <?php $contador=1; ?>
@@ -128,18 +126,16 @@ foreach (Auth::user()->roles as $rol) {
                    ($cita->name)." "
                    .ucfirst($cita->last_name)}}</div>
                             @if($cita->atendido)
-                                <span class="badge badge-pill
-                   badge-success">atendido</span>
+                                <span class="badge badge-pill badge-success">atendido</span>
                             @else
-                                <span class="badge badge-pill
-                   badge-warning text-white">pendiente</span>
+                                <span class="badge badge-pill badge-warning text-white">pendiente</span>
                             @endif
                         </a>
                     @endforeach
                 </div>
             @else
                 <div class="alert alert-warning text-center">
-                    No se ha registrado ninguna cita para el dia de hoy
+                    No se ha registrado nínguna cita para el día de hoy.
                 </div>
             @endif
         </div>
@@ -159,8 +155,6 @@ foreach (Auth::user()->roles as $rol) {
                     </div>
                 </div>
             @endif
-
-
         </div>
     </div>
 @endif

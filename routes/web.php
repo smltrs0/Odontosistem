@@ -51,7 +51,7 @@ Route::get('/restauracion', function (){
 
 // Solo vistas
 
-Route::resource('citas-medicas', 'CitasMedicasController');
+Route::resource('citas-medicas', 'CitasMedicasController')->names('citas-medicas');
 
 
 Route::resource('pagos', 'AbonosController')->names('pagos');
@@ -70,6 +70,10 @@ Route::get('facturas', function () {
 
 // Ruta para crear PDF de ejemplo
 Route::get('generar-factura/{id}','PDFController@generatePDF')->name('generar-factura');
+
+
+Route::get('confirmar-asistencia/{id}','AsistenciaController@confirmar')->name('confirmar-asistencia');
+Route::get('cancelar-asistencia/{id}','AsistenciaController@cancelar')->name('cancelar-asistencia');
 
 Route::get('test', function(){
     $procedures = procedure::find(50);

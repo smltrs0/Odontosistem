@@ -36,8 +36,8 @@ class CitasMedicasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
+    
 
         $cita_medica = [
             'evaluacion' => $request->evaluacion,
@@ -51,19 +51,22 @@ class CitasMedicasController extends Controller
         $id_cita_medica = citas_medicas::insertGetId($cita_medica);
 
         $data = array();
-        foreach ($request->procedimientos as $procedimiento_id) {
+        foreach ($request->procedimientos as $procedimiento) {
             array_push($data, [
-                'procedure_id' => $procedimiento_id,
+                'procedure_id' => $procedimiento['id'],
                 'citas_medicas_id' => $id_cita_medica,
-                'cantidad' => 1 // Falta capturar la cantidad
+                'cantidad' => $procedimiento['cantidad']
             ]);
         }
 
         $cita_medica= citas_medicas::find($id_cita_medica);
         $cita_medica->procedimientos()->sync($data);
         // Falta capturar los datos en la visual que el cambio se realizo correctamete
-        return redirect("citas-medicas/".$request->paciente_id)->with('success', 'Datos actualizados correctamente');
-
+        $message = [ 
+            'res' =>'success', 
+            'msg' =>'Datos actualizados correctamente'
+        ];
+        echo json_encode(compact('message'));
     }
 
     /**
