@@ -11,6 +11,7 @@ class citas_medicas extends Model
 
     protected $fillable= [
         'date',	
+        'pacientes_id',
         'evaluacion',	
         'medicacion',	
         'analisis_solocitados',	
@@ -22,7 +23,7 @@ class citas_medicas extends Model
 
     public function Paciente()
     {
-        return $this->belongsTo('App\Pacientes');
+        return $this->belongsTo(Pacientes::class, 'pacientes_id');
     }
 
     public function procedimientos() {

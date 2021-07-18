@@ -17,7 +17,7 @@
                         Dirección de facturación : {{  $paciente->address}}<br/>
                     </td>
                     <td width="35%">
-                        Factura No. : <br/>
+                        Factura No. : {{ $numero_de_factura }}<br/>
                         Factura Fecha : {{ date("d-m-Y H:i:s") }}<br/>
                     </td>
                 </tr>
@@ -63,11 +63,11 @@
                 </tr>
                 <tr>
                     <td align="right" colspan="5">Monto Pagado:</td>
-                    <td align="left">'45'</td>
+                    <td align="left">{{$abonado}}</td>
                 </tr>
                 <tr>
                     <td align="right" colspan="5"><b>Monto adeudado:</b></td>
-                    <td align="left">'19.36'</td>
+                    <td align="left">{{sprintf("%01.2f",($subTotal*0.12) + $subTotal) - $abonado}}</td>
                 </tr>
 
             </table>

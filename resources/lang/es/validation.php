@@ -131,8 +131,11 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'monto_abonado' => [
+            'required' => 'El campo monto abonado es obligatorio',
+        ],
+        'metodo_pago' => [
+            'required' => 'Seleccione el método de pago',
         ],
     ],
 

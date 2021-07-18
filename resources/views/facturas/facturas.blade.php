@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-header">Facturas</div>
                 <div class="card-body">
-                    <table class="table table-light">
+                    <table class="table table-light table-sm">
                         <thead class="thead-light">
                             <tr>
                                 <th>#</th>
@@ -16,20 +16,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>001</td>
-                                <td>Angelo Amaro</td>
-                                <td>04-12-2020 14:35:21</td>
-                                <td>
-                                    <a href=""><span class="fa fa-eye"></span></a>
-                                    <a href=""><span class="fa fa-edit"></span></a>
-                                    <a href=""><span class="fa fa-print"></span></a>
-                                </td>
-                                
-                            </tr>
+                            @foreach($facturas as $index => $factura)
+                                <tr>
+                                    <td>{{ $index+1 }}</td>
+                                    <td>{{ $factura->id }} </td>
+                                    <td>{{ ucfirst($factura->cita->paciente->name)." ".ucfirst($factura->cita->paciente->last_name) }}</td>
+                                    <td>{{ $factura->created_at }}</td>
+                                    <td>
+                                        <a href=""><span class="fa fa-eye"></span></a>
+                                        <a href=""><span class="fa fa-edit"></span></a>
+                                        <a href=""><span class="fa fa-print"></span></a>
+                                    </td>
+                                    
+                                </tr>
+                                @endforeach
                         </tbody>
                     </table>
+                    <div class="card-footer">
+                        {{ $facturas->links() }}   
+                    </div>
                 </div>
         </div>
 </div>

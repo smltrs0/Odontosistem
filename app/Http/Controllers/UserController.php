@@ -25,7 +25,6 @@ class UserController extends Controller
         Gate::authorize('haveaccess', 'user.index');
         $users =  User::with('roles')->orderBy('id', 'Desc')->paginate(10);
         //return $users;
-
         return view('user.index', compact('users'));
     }
 
@@ -106,7 +105,7 @@ class UserController extends Controller
             $user->update($request->all());
             $user->roles()->sync($request->get('roles'));
             return redirect()->route('user.index')
-                ->with('status_success', 'User updated successfully');
+                ->with('status_success', 'Usuario actualizado exitosamente');
         }
 
     }
@@ -122,6 +121,6 @@ class UserController extends Controller
         $user->delete();
 
         return redirect()->route('user.index')
-            ->with('status_success', 'User successfully removed');
+            ->with('status_success', 'Usuario eliminado exitosamente');
     }
 }

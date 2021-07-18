@@ -5,22 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="298f4cb9-3c52-47f8-9c41-2626d41b84ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/backup/restore.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Odontosistem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Odontosistem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base de datos/odontosistem (1).sql" beforeDir="false" afterPath="$PROJECT_DIR$/Base de datos/odontosistem (1).sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Citas.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Citas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PacientesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PacientesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/scripts/odontograma/odontogram.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/scripts/odontograma/odontogram.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/calendar/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Abonos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Abonos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Facturas.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Facturas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PDFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PDFController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/citas-medicas/citas_medicas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/citas-medicas/citas_medicas.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/facturas/facturas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/facturas/facturas.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/myPDF.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/myPDF.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pacientes/odontogram.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pacientes/odontogram.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pacientes/ver.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pacientes/ver.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/myPDF.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,6 +164,9 @@
       <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
       <path value="$PROJECT_DIR$/vendor/spatie/db-dumper" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-backup" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/select2/select2" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
     </include_path>
   </component>
   <component name="ProjectId" id="1fw50BHVIcjgVMAWgDEjbG9EfRY" />
@@ -279,6 +275,7 @@
       <workItem from="1607955536820" duration="12380000" />
       <workItem from="1608051932443" duration="569000" />
       <workItem from="1611537184444" duration="2104000" />
+      <workItem from="1626569605208" duration="297000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1605529817156</created>
@@ -303,5 +300,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1626569687980">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1626569687980" />
   </component>
 </project>

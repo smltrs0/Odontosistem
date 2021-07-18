@@ -142,13 +142,19 @@ foreach (Auth::user()->roles as $rol) {
                             <li>
                                 <a href="{{ route('pagos.index') }}">
                                     <i class="metismenu-icon">
+                                    </i>Pagos
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="{{ route('cuentas-por-cobrar') }}">
+                                    <i class="metismenu-icon">
                                     </i>Cuentas por cobrar
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('registrar-pago') }}">
                                     <i class="metismenu-icon">
-                                    </i>Registrar pago
+                                    </i>Registrar abono
                                 </a>
                             </li>
                         </ul>

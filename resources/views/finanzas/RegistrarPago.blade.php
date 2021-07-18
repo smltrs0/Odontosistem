@@ -1,38 +1,23 @@
 @extends('layouts.app')
 @section('content')
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>
     <div class="mb-3">
         <div class="card">
-            <div class="card-header">Registrar pago</div>
+            <div class="card-header">Registrar abono</div>
             <div class="card-body">
-               <div class="form-group">
-                  <label for=""> Introduce DNI o el numero de la factura para buscar:</label>
-                    <input class="form-control" type="text" name="buscar">
-                    <input class="btn btn-block" type="submit" value="Buscar">
-               </div>
-
-              <table class="table table-light">
+              <table class="table table-light table-sm" id="registrarPagos">
                   <thead class="thead-light">
                       <tr>
                           <th>Factura ID</th>
                           <th>DNI</th>
-                          <th></th>
+                          <th>Nombre</th>
+                          <th>Total abonado</th>
+                          <th>Valor factura</th>
+                          <th>&nbsp;</th>
                       </tr>
                   </thead>
-                  <tbody>
-                      <tr>
-                          <td>98a7sdas</td>
-                          <td>515161848</td>
-                          <td>
-                              <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                Pagar
-                              </button></td>
-                      </tr>
-                  </tbody>
               </table>
-              <div class="alert alert-warning text-center">
-                <p>No se han encontrado concidencias en nuestros registros</p>
-              </div>
         </div>
     </div>
 
@@ -43,7 +28,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Registrar pago</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Registrar abono</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -73,5 +58,61 @@
       </div>
     </div>
   </div>
+  <script>
+    let idioma = {
+                "sProcessing":     "Procesando...",
+                "sLengthMenu":     "Mostrar _MENU_ registros",
+                "sZeroRecords":    "No se encontraron resultados",
+                "sEmptyTable":     "NingÃºn dato disponible en esta tabla",
+                "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix":    "",
+                "sSearch":         "Buscar por número de factura:",
+                "sUrl":            "",
+                "sInfoThousands":  ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst":    "Primero",
+                    "sLast":     "Ultimo",
+                    "sNext":     "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                },
+                "buttons": {
+                    "copyTitle": 'Informacion copiada',
+                    "copyKeys": 'Use your keyboard or menu to select the copy command',
+                    "copySuccess": {
+                        "_": '%d filas copiadas al portapapeles',
+                        "1": '1 fila copiada al portapapeles'
+                    },
+
+                    "pageLength": {
+                    "_": "Mostrar %d filas",
+                    "-1": "Mostrar Todo"
+                    }
+                }
+            };
+    $(document).ready(function() {
+      $('#registrarPagos').DataTable({
+        "serverSide" : true,
+        "ajax": "{{url('api/obtener-facturas')}}",
+        "columns": [
+          { "data": "id" },
+          { "data": "dni" },
+          { "data": "nombre_paciente" },
+          { "data": "total_abonado" },
+          { "data": "valor_factura" },
+          { "data": "btn" }
+
+        ],
+        "language": idioma,
+        "pageLength": 5
+      });
+    });
+    </script>
 @endsection
 

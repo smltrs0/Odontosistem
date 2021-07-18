@@ -24,9 +24,7 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17-beta.0/vue.js"></script>
 </head>
-
 <body>
-
     <div class="container mt-5">
         <div class="card">
             <div class="card-header">Citas medicas del paciente
@@ -127,10 +125,10 @@
                                                 Generar factura
                                             </button>
                                         </div>
-                                        <div class="col-6">
+                                        <!-- <div class="col-6">
                                             <a href="#" class="btn btn-block btn-primary"><i class="fa fa-edit"></i>
                                                 Modificar datos</a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <!-- Button trigger modal -->
@@ -149,14 +147,14 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="form-group">
-                                                    <label for="">Introduca la cantidad pagada</label>
+                                                    <label for="">Introduzca la cantidad pagada</label>
                                                     <input class="form-control" type="number" name="cantidad"
-                                                        id="cantidad">
+                                                        id="cantidad{{$cita->id}}">
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <div class="row">
-                                                <a href="{{ route('generar-factura', $cita->id)  }}"
+                                                <a onClick="generarFactura({{$cita->id}})"
                                                             class="btn btn-block btn-success"><i class="fa fa-print"></i>
                                                             Generar factura</a>
                                                 </div>
@@ -178,7 +176,6 @@
                 </div>
                 <!--Final de citas medicas-->
             </div>
-
         </div>
     </div>
     <!-- Modal -->
@@ -272,6 +269,9 @@
                     </div>
             </div>
         </div>
+        <form action="">
+            @csrf
+        </form>
     </div>
     </div>
     <!--Final modal Registrar cita medica-->
@@ -423,6 +423,39 @@
         }
 
     })
+
+
+
+
+    const generarFactura = (cita_id) => {
+        // {{ route('generar-factura', $cita->id)  }}
+        let monto = document.getElementById(`cantidad${cita_id}`)
+
+        let data = {
+            cita_id: cita_id,
+            cantidad: monto.value
+        }
+
+        fetch("{{ route('crear-factura')}}", {
+                    headers:{
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    method:'POST',
+                    body: JSON.stringify(data)
+                   })
+                   .then(response => response.json())
+                   .then(result => {
+                        console.log(result.message)
+                        if(result.message.res == 'error'){
+                            alert(result.message.msg);
+                            location.reload();
+                        }
+                   })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+    }
 
     </script>
 

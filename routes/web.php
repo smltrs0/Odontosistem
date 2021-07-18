@@ -55,20 +55,28 @@ Route::resource('citas-medicas', 'CitasMedicasController')->names('citas-medicas
 
 
 Route::resource('pagos', 'AbonosController')->names('pagos');
+Route::get('generar-pago/{id}', 'AbonosController@registrarPago')->name('generar-pago');
+Route::get('detalle-pago/{id}', 'PagosController@detallersAbono')->name('detalle-pago');
+
+Route::post('registrar-pago-factura/{id}', 'AbonosController@registrarPagoFactura')->name('registrar-pago-factura');
+
+
+Route::get('cuentas-por-cobrar', 'AbonosController@cuentasPorCobrar')->name('cuentas-por-cobrar');
+Route::get('cuenta-por-cobrar/{id}', 'AbonosController@show')->name('cuenta-por-cobrar');
 
 Route::get('registrar-pago',function (){
     return view('finanzas.RegistrarPago');
  })->name('registrar-pago');
 
+
 Route::get('estadisticas-pacientes', function () {
     return view('finanzas.finanzas');
 })->name('estadisticas-pacientes');
 
-Route::get('facturas', function () {
-    return view('facturas.facturas');
-})->name('facturas');
+Route::get('facturas', 'FacturasController@index')->name('facturas');
 
-// Ruta para crear PDF de ejemplo
+Route::post('crear-factura', 'PDFController@registrarPagoCreacionFactura')->name('crear-factura');
+
 Route::get('generar-factura/{id}','PDFController@generatePDF')->name('generar-factura');
 
 
