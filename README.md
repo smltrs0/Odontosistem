@@ -44,4 +44,7 @@ DB_PASSWORD=
 
 7) ejecuta npm install && npm run dev
 
-8) ejecuta php artisan serve y prueba el proyecto que debe funcionar.
+
+8) php artisan storage:link
+
+9) ejecuta php artisan serve y prueba el proyecto que debe funcionar.

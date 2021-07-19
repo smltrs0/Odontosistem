@@ -130,13 +130,16 @@
             $(".switch-header-cs-class").on("click", function () {
             var t = $(this).attr("data-class");
             $(".switch-header-cs-class").removeClass("active"), $(this).addClass("active"),
-                $(".app-header").attr
-                ("class", "app-header"), $(".app-header").addClass("header-shadow " + t)
+                 $(".app-header").addClass("header-shadow " + t)
+                sessionStorage.setItem("header_class", t);
+                cargarTemaSeleccionado();
         });
             $(".switch-sidebar-cs-class").on("click", function () {
                 var t = $(this).attr("data-class");
                 $(".switch-sidebar-cs-class").removeClass("active"), $(this).addClass("active"), $(".app-sidebar").attr
                 ("class", "app-sidebar"), $(".app-sidebar").addClass("sidebar-shadow " + t)
+                sessionStorage.setItem("sidebar_class", t);
+                cargarTemaSeleccionado();
             })
     })
 
@@ -174,11 +177,15 @@ while (regexp.test(amount_parts[0]))
 return amount_parts.join('.');
 }
 
+const cargarTemaSeleccionado = () => {
+    $(".app-header").addClass("header-shadow " + sessionStorage.getItem("header_class"))
+    $(".app-sidebar").addClass("sidebar-shadow " + sessionStorage.getItem("sidebar_class"))
+}
 
 function ventanaSecundaria (URL){
    window.open(URL,'ventana','height=' + screen.height + ',width=' + screen.width + ',resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=yes')
 }
-
+cargarTemaSeleccionado();
 </script>
 
 </html>

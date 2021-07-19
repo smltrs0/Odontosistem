@@ -145,7 +145,7 @@
     <div class="container text-center">
         <p class="h2 text-dark">Bienvenid@ {{Auth::user()->name}}</p>
         <div>
-            @if($paciente_usuario == '')
+            @if(!is_null($paciente_usuario))
                 <a href="{{route('citas.index')}}">Crea una cita</a>
             @else
                 <div>

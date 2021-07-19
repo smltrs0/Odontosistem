@@ -13,9 +13,9 @@
                 </div>
                 <div class="col-md-6">
                     <label>Detalles de la factura</label>
-                    <p><b>Fecha: </b>{{ $abono->created_at }}</p>
-                    <p><b>Número:</b>{{ $abono->factura_id }} <a href="{{ route('cuenta-por-cobrar', $factura->id) }}" title="Ver detalles factura"> <i class="fa fa-eye"></i></a></p>
-                    <p><b>Total: </b>{{ $abono->total_factura }}</p>
+                    <p><b>Fecha creación: </b>{{ $abono->created_at }}</p>
+                    <p><b>Número de la factura:</b>{{ $abono->factura_id }} <a href="{{ route('cuenta-por-cobrar', $factura->id) }}" title="Ver detalles factura"> <i class="fa fa-eye"></i></a></p>
+                    <p><b>Valor total de la factura: </b>{{ $abono->total_factura }}</p>
                 </div>
             </div>
             <div class="row">

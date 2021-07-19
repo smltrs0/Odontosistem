@@ -15,6 +15,7 @@ class PagosController extends Controller{
 
         
         if(!is_null($abono->adjunto) && !empty($abono->adjunto)) $abono->adjunto = Storage::url($abono->adjunto);
+        // Storage::url($abono->adjunto);
         
         return view('pagos.DetallePago', compact('abono', 'factura'));
     }

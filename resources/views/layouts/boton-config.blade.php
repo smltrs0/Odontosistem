@@ -49,7 +49,7 @@
                             </div>
                         </li>
                         <li class="list-group-item"> 
-                            <button onclick="toggleDollar()">Mostrar dolar</button>
+                            <button onclick="toggleDollar()" class="btn-wide btn-shadow btn-primary btn btn-secondary switch-theme-class">Mostrar dolar</button>
                         </li>
                         <!-- <li class="list-group-item">
                             <div class="widget-content p-0">

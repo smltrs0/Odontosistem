@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Citas;
 use Auth;
+use App\Citas;
+use App\Pacientes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -31,8 +32,7 @@ class HomeController extends Controller
         $citas_confirmada = Citas::where('asistencia_confirmada', '=', 1)->count();
         $citas_sin_confirmar = Citas::where('asistencia_confirmada', '=', null)->count();
 
-        $paciente_usuario =  DB::table('pacientes')->select('id')->where('user_id', '=', auth()->user()->id)->get();
-
+        $paciente_usuario =  Pacientes::where('user_id', '=', auth()->user()->id)->first();
         $date = now()->format('Y-m-d');
 //
         $citas= Citas::select('citas.fecha', 'citas.hora', 'citas.id as id_cita', 'pacientes.id as id_paciente', 'citas.atendido', 'pacientes.name', 'pacientes.last_name' )
