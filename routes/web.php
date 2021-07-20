@@ -67,11 +67,8 @@ Route::get('cuenta-por-cobrar/{id}', 'AbonosController@show')->name('cuenta-por-
 Route::get('registrar-pago',function (){
     return view('finanzas.RegistrarPago');
  })->name('registrar-pago');
-
-
-Route::get('estadisticas-pacientes', function () {
-    return view('finanzas.Estadisticas');
-})->name('estadisticas-pacientes');
+ 
+Route::get('estadisticas-pacientes', 'EstadisticasController@EstadisticasPacientes')->name('estadisticas-pacientes');
 
 Route::get('facturas', 'FacturasController@index')->name('facturas');
 
