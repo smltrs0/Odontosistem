@@ -70,7 +70,7 @@ Route::get('registrar-pago',function (){
 
 
 Route::get('estadisticas-pacientes', function () {
-    return view('finanzas.finanzas');
+    return view('finanzas.Estadisticas');
 })->name('estadisticas-pacientes');
 
 Route::get('facturas', 'FacturasController@index')->name('facturas');
