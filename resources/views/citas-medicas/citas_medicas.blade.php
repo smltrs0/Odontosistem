@@ -56,7 +56,7 @@
                                     aria-labelledby="list-profile-list">
                                     <div class="row">
                                         <div class="form-group col-md-6 col-sm-12">
-                                            <label for="evaluacion">Evaluacion</label>
+                                            <label for="evaluacion">Evaluación</label>
                                             <p>
                                                 {{ $cita->evaluacion }}
                                             </p>
@@ -185,7 +185,7 @@
                     @csrf
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="ModalCitaLabel">Evaluacion del paciente</h5>
+                            <h5 class="modal-title" id="ModalCitaLabel">Evaluación del paciente</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -198,7 +198,7 @@
                                                 </textarea>
                                 </div>
                                 <div class="form-group col-md-6 col-sm-12">
-                                    <label for="medicacion">Medicacion</label>
+                                    <label for="medicacion">Medicación</label>
                                     <textarea v-model="medicacion" class="form-control" name="medicacion" id="medicacion"></textarea>
                                 </div>
                             </div>
@@ -428,7 +428,6 @@
 
 
     const generarFactura = (cita_id) => {
-        // {{ route('generar-factura', $cita->id)  }}
         let monto = document.getElementById(`cantidad${cita_id}`)
 
         let data = {

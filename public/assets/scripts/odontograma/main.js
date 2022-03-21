@@ -73,11 +73,36 @@
 		pro.activate();
 	});
 
-
+	
+	$('.numbers-only').keypress(function(event) {
+		if(event.which < 48 || event.which > 57) {
+			event.preventDefault();
+		}
+	}
+	);
+	$('.cedula').keypress(function(event) {
+		validarCedula(event);
+	})
 
   });
 })(jQuery);
 
+
+function validarCedula(e) {
+	var key = window.Event ? e.which : e.keyCode
+	key = String.fromCharCode(key);
+	var patron = /[0-9]/;
+	var tecla_final = true;
+
+	if(key == "v" || key == "V"){
+		tecla_final = false;
+	}else{
+		if(!patron.test(key)) {
+			tecla_final = false;
+		}
+	}
+	return tecla_final;
+}
 
 
 

@@ -15,8 +15,8 @@ class PDFController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function generatePDF(citas_medicas $id){
-        $cita = $id;
+    public function generatePDF($id){
+        $cita = citas_medicas::where('id', $id)->first();
         $numero_de_factura = Facturas::where('cita_medica_id', $cita->id)->first()->id;
         $abonado = Abonos::where('factura_id', $cita->id)->get()->sum('abonado');
         $paciente = Pacientes::find($cita->pacientes_id);

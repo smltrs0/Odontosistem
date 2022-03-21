@@ -2,19 +2,19 @@
     <label>{{__('Full name')}}</label>
     <div class="row form-group">
         <div class="col">
-            <input type="text" class="form-control" name="name" placeholder="{{__('First name')}}"
+            <input onkeypress="onlyString(event)" type="text" class="form-control" name="name" placeholder="{{__('First name')}}"
                    value="{{old('name', $paciente->name)}}" required>
         </div>
         <div class="col">
-            <input type="text" class="form-control" name="second_name" placeholder="{{__('Second name')}}"
+            <input onkeypress="onlyString(event)" type="text" class="form-control" name="second_name" placeholder="{{__('Second name')}}"
                    value="{{old('second_name', $paciente->second_name)}}">
         </div>
         <div class="col">
-            <input type="text" class="form-control" name="last_name" placeholder="{{__('Last name')}}"
+            <input onkeypress="onlyString(event)" type="text" class="form-control" name="last_name" placeholder="{{__('Last name')}}"
                    value="{{old('last_name', $paciente->last_name)}}" required>
         </div>
         <div class="col">
-            <input type="text" class="form-control" name="second_last_name" placeholder="{{__('Second last name')}}"
+            <input onkeypress="onlyString(event)" type="text" class="form-control" name="second_last_name" placeholder="{{__('Second last name')}}"
                    value="{{old('second_last_name', $paciente->second_last_name)}}">
         </div>
     </div>
@@ -29,7 +29,7 @@
             </select>
         </div>
         <div class="col-8">
-            <input class="form-control" type="text" name="dni" placeholder="{{__('DNI')}}"
+            <input class="form-control numbers-only" onkeypress="onliNumbers(event)" type="text" name="dni" placeholder="{{__('DNI')}}"
                    value="{{old('dni', $paciente->dni)}}" required>
         </div>
     </div>
@@ -56,7 +56,7 @@
     </div>
     <div class="form-group">
         <label for="inputPhone">Telefono de contacto</label>
-        <input class="form-control" type="text" name="phone" id="inputPhone" value="{{old('phone', $paciente->phone)}}" required>
+        <input class="form-control" onkeypress="onliNumbers(event)" type="text" name="phone" id="inputPhone" value="{{old('phone', $paciente->phone)}}" required>
     </div>
     <div class="form-group">
         <label for="inputCorreo">Correo electronico</label>
@@ -66,5 +66,23 @@
     <div class="form-group">
         <textarea class="form-control" name="address">{{old('address', $paciente->address)}}</textarea required>
     </div>
-
 </div>
+<script>
+    function onliNumbers(event) {
+        var key = window.event ? event.keyCode : event.which;
+        if (key < 48 || key > 57) {
+            event.preventDefault();
+        } else {
+            return true;
+        }
+    }
+
+    function onlyString(event) {
+        var key = window.event ? event.keyCode : event.which;
+        if (key < 65 || key > 90 && key < 97 || key > 122) {
+            event.preventDefault();
+        } else {
+            return true;
+        }
+    }
+</script>

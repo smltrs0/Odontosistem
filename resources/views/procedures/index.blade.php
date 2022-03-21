@@ -9,29 +9,31 @@
                
                 @if(false)
                     <div class="alert alert-warning text-center">
-                        No tienes ningun procedimiento registrado.
+                        No tienes ningún procedimiento registrado.
                     </div>
                 @endif
                 
            
                 
                 <table class="table table-hover table-sm">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Costo</th>
+                            <th>Nombre</th>
+                            <th>Estilo</th>
+                            <th width="">Acción</th>
+                        </tr>
+                    </thead>
+                    @foreach ($procedimientos as $index => $procedure)
                     <tr>
-                        <td>Code</td>
-                        <td>Costo</td>
-                        <td>Nombre</td>
-                        <td>type</td>
-                        <td width="">Acción</td>
-                    </tr>
-                    @foreach ($procedimientos as $procedure)
-                    <tr>
-                        <td>{{  $procedure->code }}</td>
+                        <td class="text-center">{{ ($index+1) }}</td>
                         <td>{{  $procedure->price }}</td>
                         <td>{{  $procedure->title }}</td>
                         <td>{{  $procedure->type }}</td>
-                        <td> <a href="{{ route('procedures.edit',$procedure->id) }}" class="btn btn-warning btn-sm text-white">
+                        <td style="display: flex"> <a href="{{ route('procedures.edit',$procedure->id) }}" class="btn btn-warning btn-sm text-white mr-1">
                             <span class="fa fa-edit"></span></a> 
-                            {{-- <a href="{{ route('procedures.destroy',$procedure->id) }}" class="btn btn-sm btn-danger"><span class="fa fa-trash-alt"></span></a> --}}
+                            {{-- <a href="{{ route('procedures.destroy',$procedure->id) }}" class="btn btn-sm btn-danger ml-1"><span class="fa fa-trash-alt"></span></a> --}}
                             <form method="POST" action="{{ route('procedures.destroy', $procedure->id) }}">
                                @csrf
                                 @method('delete')

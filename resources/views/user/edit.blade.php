@@ -5,21 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><h2>Edit User</h2></div>
-
+                <div class="card-header"><h2>Editar Usuario</h2></div>
                 <div class="card-body">
                    @include('custom.message')
-
-
-                
                     <form action="{{ route('user.update', $user->id)}}" method="POST">
                      @csrf
                      @method('PUT')
-
                      <div class="container">
-
                         <h3>Required data</h3>
-
                          <div class="form-group">                            
                             <input type="text" class="form-control" 
                             id="name" 
@@ -37,7 +30,6 @@
                             value="{{ old('email' , $user->email)}}"
                             >
                           </div>
-                          
                           <div class="form-group">                            
                             <select  class="form-control"  name="roles" id="roles">
                               @foreach($roles as $role)
@@ -48,54 +40,14 @@
                                     @endif
                                   @endisset
                                 
-                                
                                 >{{ $role->name }}</option>
                               @endforeach
                             </select>
                           </div>
-
-                          
                           <hr>
                           <input class="btn btn-primary" type="submit" value="Save">
-
-
-
-
-
-
-
-
-
                      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </form>
-
-
-
-
-
-
-
-
                 </div>
             </div>
         </div>

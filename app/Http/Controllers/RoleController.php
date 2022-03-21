@@ -24,6 +24,11 @@ class RoleController extends Controller
         Gate::authorize('haveaccess','role.index'); // Verificamos el acceso
 
         $roles =  Role::orderBy('id','Desc')->paginate(2);
+        $roles->getCollection()->transform(function($role){
+            $role->{'full-access'} = $role->{'full-access'} == 'no' ? 'No' : 'Si';
+            return $role;
+        });
+
 
         return view('role.index',compact('roles'));
     }

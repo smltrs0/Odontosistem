@@ -81,7 +81,7 @@
         <div class="container">
             <div class="row">
                    <div class="col-md-4 col-sm-5">
-                      <p><h3>Bienvenidos al Servicio de Odontologia del Dispensario San Francisco de Asís</h3></p>
+                      <p><h3>Bienvenidos</h3></p>
                  </div> 
               <div class="col-md-8 col-sm-7 text-right " style="font-size: calc(0.09em + 0.9vw)">
                       <span class="phone-icon"><i class="fa fa-phone text-primary"></i> 0285-6335114</span> |

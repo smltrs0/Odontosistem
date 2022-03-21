@@ -93,11 +93,6 @@ class UserController extends Controller
             'email'         => 'required|max:50|unique:users,email,'.$user->id
         ]);
 
-
-
-
-
-
         if ($request->update) {
             $user->update($request->all());
             return redirect()->route('myacount')->with('status_success', 'You acount updated successfully');

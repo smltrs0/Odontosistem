@@ -25,7 +25,7 @@
                                     <td>
                                         <a href=""><span class="fa fa-eye"></span></a>
                                         <a href=""><span class="fa fa-edit"></span></a>
-                                        <a href=""><span class="fa fa-print"></span></a>
+                                        <a target="_blank" href="./generar-factura/{{$factura->cita->id}}"><span class="fa fa-print"></span></a>
                                     </td>
                                     
                                 </tr>

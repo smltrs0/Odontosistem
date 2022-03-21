@@ -23,7 +23,8 @@ class EstadisticasController extends Controller
             8 => 'Septiembre',
             9 => 'Octubre',
             10 => 'Noviembre',
-            11 => 'Diciembre'
+            11 => 'Diciembre',
+            12 => 'Diciembre'
         ];
 
         if(is_null($request->year) || $request->year == 0) $fecha = date("Y");

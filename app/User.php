@@ -2,10 +2,11 @@
 
 namespace App;
 
+use App\Pacientes;
+use App\Permission\Traits\UserTrait;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use App\Permission\Traits\UserTrait;
 
 //
 class User extends Authenticatable
@@ -39,8 +40,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function pacientes()
-    {
-        return  $this->hasOne('App\Pacientes');
+    public function pacientes(){
+        return  $this->hasOne(Pacientes::class);
     }
 }
